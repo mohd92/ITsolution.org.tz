@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="sw">
 <head>
@@ -32,26 +31,32 @@ header{
   left:0;
   width:100%;
   z-index:1000;
-  background:rgba(10,25,47,.95);
-  padding:16px 6%;
+  background:rgba(10,25,47,.96);
+  padding:15px 6%;
   display:flex;
   justify-content:space-between;
   align-items:center;
+  box-shadow:0 3px 15px rgba(0,0,0,.15);
 }
 
 .logo{
   color:#00bcd4;
-  font-size:22px;
+  font-size:21px;
   font-weight:bold;
-  letter-spacing:1px;
+  letter-spacing:.5px;
+}
+
+nav{
+  display:flex;
+  align-items:center;
 }
 
 nav a{
   color:white;
   text-decoration:none;
-  margin-left:18px;
+  margin-left:17px;
   font-weight:bold;
-  font-size:14px;
+  font-size:13px;
 }
 
 nav a:hover{
@@ -60,9 +65,9 @@ nav a:hover{
 
 .lang-btn{
   margin-left:15px;
-  padding:8px 14px;
-  border:none;
-  border-radius:5px;
+  padding:8px 13px;
+  border:0;
+  border-radius:6px;
   background:#00bcd4;
   color:white;
   cursor:pointer;
@@ -71,6 +76,7 @@ nav a:hover{
 
 .hero{
   height:100vh;
+  min-height:650px;
   position:relative;
   overflow:hidden;
   display:flex;
@@ -85,7 +91,6 @@ nav a:hover{
   inset:0;
   background-position:center;
   background-size:cover;
-  background-repeat:no-repeat;
   opacity:0;
   transform:scale(1.08);
   transition:opacity 1s ease,transform 4s ease;
@@ -96,13 +101,13 @@ nav a:hover{
   transform:scale(1);
 }
 
-.slide::after{
+.slide:after{
   content:"";
   position:absolute;
   inset:0;
   background:linear-gradient(
-    rgba(10,25,47,.65),
-    rgba(10,25,47,.85)
+    rgba(10,25,47,.62),
+    rgba(10,25,47,.88)
   );
 }
 
@@ -110,30 +115,31 @@ nav a:hover{
   position:relative;
   z-index:5;
   padding:20px;
+  max-width:900px;
 }
 
 .hero h1{
   font-size:52px;
-  margin-bottom:15px;
+  margin-bottom:18px;
   text-shadow:0 3px 10px #000;
 }
 
 .hero p{
   font-size:20px;
   margin-bottom:30px;
+  color:#00e5ff;
   text-shadow:0 3px 8px #000;
-  color:#00bcd4;
 }
 
 .btn{
   display:inline-block;
   background:#00bcd4;
   color:white;
-  padding:14px 28px;
+  padding:14px 27px;
   border-radius:7px;
   text-decoration:none;
   font-weight:bold;
-  border:none;
+  border:0;
   cursor:pointer;
   transition:.3s;
 }
@@ -175,7 +181,7 @@ section{
 }
 
 .title h2{
-  font-size:36px;
+  font-size:35px;
   margin-bottom:10px;
   color:#0a192f;
 }
@@ -197,7 +203,7 @@ section{
 
 .about-box h3{
   color:#00bcd4;
-  font-size:28px;
+  font-size:27px;
   margin-bottom:20px;
 }
 
@@ -219,7 +225,16 @@ section{
   margin:8px 0;
 }
 
-.why{
+.contact-info a,
+.contact-box a{
+  color:#00bcd4;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.why,
+.booking,
+.gallery-section{
   background:#e6f7f9;
 }
 
@@ -265,6 +280,11 @@ section{
   border-radius:12px;
   overflow:hidden;
   box-shadow:0 5px 20px rgba(0,0,0,.1);
+  transition:.3s;
+}
+
+.service-card:hover{
+  transform:translateY(-5px);
 }
 
 .service-card img{
@@ -285,10 +305,6 @@ section{
 .service-card p{
   color:#555;
   line-height:1.6;
-}
-
-.gallery-section{
-  background:#e6f7f9;
 }
 
 .gallery{
@@ -312,10 +328,6 @@ section{
 
 .gallery-item:hover img{
   transform:scale(1.08);
-}
-
-.booking{
-  background:#e6f7f9;
 }
 
 form{
@@ -345,15 +357,18 @@ textarea{
   border:1px solid #ccc;
   border-radius:6px;
   font-size:16px;
+  outline:none;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+  border-color:#00bcd4;
 }
 
 textarea{
-  height:130px;
+  min-height:130px;
   resize:vertical;
-}
-
-.comments-section{
-  background:#f4f7f6;
 }
 
 .comment-form{
@@ -362,7 +377,7 @@ textarea{
 
 .qr-display-box{
   max-width:700px;
-  margin:0 auto 30px auto;
+  margin:0 auto 30px;
   background:white;
   padding:25px;
   border-radius:12px;
@@ -392,7 +407,6 @@ textarea{
   padding:10px;
   background:white;
   border-radius:8px;
-  box-shadow:0 2px 8px rgba(0,0,0,.1);
 }
 
 .rating{
@@ -479,12 +493,6 @@ textarea{
   font-size:18px;
 }
 
-.contact-box a{
-  color:#00bcd4;
-  text-decoration:none;
-  font-weight:bold;
-}
-
 footer{
   background:#0a192f;
   color:white;
@@ -496,12 +504,14 @@ footer p{
   margin:7px;
 }
 
+/* WHATSAPP */
+
 .whatsapp{
   position:fixed;
   right:20px;
   bottom:20px;
-  width:60px;
-  height:60px;
+  width:58px;
+  height:58px;
   background:#25d366;
   color:white;
   border-radius:50%;
@@ -510,68 +520,64 @@ footer p{
   justify-content:center;
   text-decoration:none;
   font-size:27px;
-  z-index:999;
+  z-index:9995;
   box-shadow:0 4px 15px rgba(0,0,0,.3);
 }
 
-
-/* ============================= */
-/* AI ASSISTANT */
-/* ============================= */
+/* AI */
 
 .ai-assistant{
   position:fixed;
   right:20px;
   bottom:90px;
-  width:360px;
-  height:530px;
-  background:#fff;
+  width:370px;
+  height:540px;
+  background:white;
   border-radius:18px;
   box-shadow:0 12px 40px rgba(0,0,0,.28);
   overflow:hidden;
   display:none;
   flex-direction:column;
-  z-index:9997;
+  z-index:9999;
   border:1px solid #ddd;
 }
 
 .ai-header{
   background:linear-gradient(135deg,#0a192f,#00bcd4);
   color:white;
-  padding:16px;
+  padding:14px;
   display:flex;
   align-items:center;
   gap:12px;
 }
 
 .ai-icon{
-  width:46px;
-  height:46px;
+  width:45px;
+  height:45px;
   background:white;
   color:#00bcd4;
   border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:25px;
+  font-size:24px;
 }
 
 .ai-header h3{
-  margin:0;
   font-size:17px;
 }
 
 .ai-header span{
   font-size:12px;
-  color:#e0ffff;
+  color:#dfffff;
 }
 
 .ai-close{
   margin-left:auto;
-  background:transparent;
+  background:none;
   color:white;
-  border:none;
-  font-size:20px;
+  border:0;
+  font-size:25px;
   cursor:pointer;
 }
 
@@ -589,7 +595,8 @@ footer p{
   margin-bottom:12px;
   font-size:14px;
   line-height:1.55;
-  word-wrap:break-word;
+  word-break:break-word;
+  white-space:pre-wrap;
 }
 
 .ai-message.bot{
@@ -617,42 +624,35 @@ footer p{
 .ai-input-area input{
   flex:1;
   padding:12px 14px;
-  border:1px solid #ccc;
   border-radius:25px;
-  outline:none;
-  font-size:14px;
-}
-
-.ai-input-area input:focus{
-  border-color:#00bcd4;
 }
 
 .ai-input-area button{
   width:46px;
   height:46px;
-  border:none;
+  border:0;
   border-radius:50%;
   background:#00bcd4;
   color:white;
-  font-size:21px;
+  font-size:20px;
   cursor:pointer;
 }
 
-.ai-input-area button:hover{
-  background:#008c9e;
+.ai-input-area button:disabled{
+  cursor:not-allowed;
 }
 
 .ai-open{
   position:fixed;
   right:20px;
-  bottom:95px;
+  bottom:90px;
   width:60px;
   height:60px;
-  border:none;
+  border:0;
   border-radius:50%;
   background:#00bcd4;
   color:white;
-  font-size:28px;
+  font-size:27px;
   cursor:pointer;
   z-index:9996;
   box-shadow:0 5px 20px rgba(0,0,0,.3);
@@ -662,6 +662,32 @@ footer p{
   transform:scale(1.08);
 }
 
+.typing{
+  display:flex;
+  gap:4px;
+  align-items:center;
+}
+
+.typing span{
+  width:7px;
+  height:7px;
+  background:#00bcd4;
+  border-radius:50%;
+  animation:typing 1s infinite;
+}
+
+.typing span:nth-child(2){
+  animation-delay:.15s;
+}
+
+.typing span:nth-child(3){
+  animation-delay:.3s;
+}
+
+@keyframes typing{
+  0%,100%{opacity:.25}
+  50%{opacity:1}
+}
 
 /* MOBILE */
 
@@ -671,20 +697,24 @@ footer p{
     grid-template-columns:repeat(2,1fr);
   }
 
+  nav a{
+    margin-left:8px;
+  }
+
 }
 
 @media(max-width:700px){
 
   header{
-    padding:15px 5%;
+    padding:14px 5%;
   }
 
-  nav{
+  nav a{
     display:none;
   }
 
   .logo{
-    font-size:18px;
+    font-size:17px;
   }
 
   .hero h1{
@@ -742,19 +772,40 @@ footer p{
 </div>
 
 <nav>
-<a href="#home">Nyumbani</a>
-<a href="#about">Kuhusu Sisi</a>
-<a href="#services">Huduma Zetu</a>
-<a href="#gallery">Picha Za Kazi</a>
-<a href="#booking">Omba Huduma</a>
-<a href="#comments">Maoni</a>
-<a href="#contact">Mawasiliano</a>
 
-<button class="lang-btn"
+<a href="#home" data-sw="Nyumbani" data-en="Home">Nyumbani</a>
+
+<a href="#about" data-sw="Kuhusu Sisi" data-en="About Us">
+Kuhusu Sisi
+</a>
+
+<a href="#services" data-sw="Huduma Zetu" data-en="Services">
+Huduma Zetu
+</a>
+
+<a href="#gallery" data-sw="Picha Za Kazi" data-en="Gallery">
+Picha Za Kazi
+</a>
+
+<a href="#booking" data-sw="Omba Huduma" data-en="Book Service">
+Omba Huduma
+</a>
+
+<a href="#comments" data-sw="Maoni" data-en="Reviews">
+Maoni
+</a>
+
+<a href="#contact" data-sw="Mawasiliano" data-en="Contact">
+Mawasiliano
+</a>
+
+<button
+class="lang-btn"
 id="langBtn"
-onclick="toggleLanguage()">
+type="button">
 English 🇬🇧
 </button>
+
 </nav>
 
 </header>
@@ -764,24 +815,29 @@ English 🇬🇧
 
 <section class="hero" id="home">
 
-<div class="slide active"
-style="background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1920&q=80');">
+<div
+class="slide active"
+style="background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1920&q=80')">
 </div>
 
-<div class="slide"
-style="background-image:url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1920&q=80');">
+<div
+class="slide"
+style="background-image:url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1920&q=80')">
 </div>
 
-<div class="slide"
-style="background-image:url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1920&q=80');">
+<div
+class="slide"
+style="background-image:url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1920&q=80')">
 </div>
 
-<div class="slide"
-style="background-image:url('https://images.unsplash.com/photo-1597733336794-12d05021d510?auto=format&fit=crop&w=1920&q=80');">
+<div
+class="slide"
+style="background-image:url('https://images.unsplash.com/photo-1597733336794-12d05021d510?auto=format&fit=crop&w=1920&q=80')">
 </div>
 
-<div class="slide"
-style="background-image:url('https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&w=1920&q=80');">
+<div
+class="slide"
+style="background-image:url('https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&w=1920&q=80')">
 </div>
 
 <div class="hero-content">
@@ -794,7 +850,8 @@ MASHIRIKA NA HUDUMA ZOTE ZA IT
 Tunatengeneza Computer, Printer, Networking Cabling na Wi-Fi ya Kasi
 </p>
 
-<a href="#booking"
+<a
+href="#booking"
 class="btn"
 id="heroBtn">
 Omba Huduma Sasa
@@ -803,11 +860,13 @@ Omba Huduma Sasa
 </div>
 
 <div class="dots">
+
 <span class="dot active"></span>
 <span class="dot"></span>
 <span class="dot"></span>
 <span class="dot"></span>
 <span class="dot"></span>
+
 </div>
 
 </section>
@@ -848,26 +907,27 @@ Timu yetu ina uzoefu wa hali ya juu katika matengenezo ya kompyuta, printer, usi
 <p>📍 Zanzibar / Tanzania</p>
 
 <p>
-📞 <a href="tel:+255777574412">
+📞
+<a href="tel:+255777574412">
 0777 574 412
 </a>
 </p>
 
 <p>
-📧 <a href="mailto:mohdmussaomar72@gmail.com">
+📧
+<a href="mailto:mohdmussaomar72@gmail.com">
 mohdmussaomar72@gmail.com
 </a>
 </p>
 
 </div>
 
-<a href="https://wa.me/255777574412"
+<a
+href="https://wa.me/255777574412"
 target="_blank"
 rel="noopener"
 class="btn">
-
 Tuma Ujumbe WhatsApp
-
 </a>
 
 </div>
@@ -966,7 +1026,9 @@ Tazama huduma zote za kiufundi tunazotoa
 
 <div class="service-card">
 
-<img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=700&q=80">
+<img
+src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=700&q=80"
+alt="Computer repair">
 
 <div class="service-content">
 
@@ -981,10 +1043,11 @@ OS Installation, na kuondoa Virusi.
 
 </div>
 
-
 <div class="service-card">
 
-<img src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&fit=crop&w=700&q=80">
+<img
+src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&fit=crop&w=700&q=80"
+alt="Printer maintenance">
 
 <div class="service-content">
 
@@ -999,10 +1062,11 @@ kubadilisha Cartridge na Roller servicing.
 
 </div>
 
-
 <div class="service-card">
 
-<img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=700&q=80">
+<img
+src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=700&q=80"
+alt="Network cabling">
 
 <div class="service-content">
 
@@ -1017,10 +1081,11 @@ termination za RJ45, na Trunking za kitaalamu.
 
 </div>
 
-
 <div class="service-card">
 
-<img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=700&q=80">
+<img
+src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=700&q=80"
+alt="WiFi configuration">
 
 <div class="service-content">
 
@@ -1046,9 +1111,7 @@ na kuhakikisha mtandao unafika kila kona.
 
 <div class="title">
 
-<h2>
-📸 Picha Za Kazi Na Operations
-</h2>
+<h2>📸 Picha Za Kazi Na Operations</h2>
 
 <p>
 Tazama baadhi ya kazi zetu za IT zilizokamilika
@@ -1059,19 +1122,27 @@ Tazama baadhi ya kazi zetu za IT zilizokamilika
 <div class="gallery">
 
 <div class="gallery-item">
-<img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=80">
+<img
+src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=80"
+alt="IT server room">
 </div>
 
 <div class="gallery-item">
-<img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=900&q=80">
+<img
+src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=900&q=80"
+alt="Network equipment">
 </div>
 
 <div class="gallery-item">
-<img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80">
+<img
+src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80"
+alt="Computer technician">
 </div>
 
 <div class="gallery-item">
-<img src="https://images.unsplash.com/photo-1597733336794-12d05021d510?auto=format&fit=crop&w=900&q=80">
+<img
+src="https://images.unsplash.com/photo-1597733336794-12d05021d510?auto=format&fit=crop&w=900&q=80"
+alt="IT operations">
 </div>
 
 </div>
@@ -1095,7 +1166,7 @@ Jaza maelezo yako na ututumie maombi yako moja kwa moja kupitia WhatsApp.
 
 </div>
 
-<form onsubmit="sendBooking(event)">
+<form id="bookingForm">
 
 <div class="form-group">
 
@@ -1106,7 +1177,8 @@ Jina Lako Kamili
 <input
 type="text"
 id="name"
-placeholder="Andika jina yako"
+placeholder="Andika jina lako"
+maxlength="100"
 required>
 
 </div>
@@ -1121,6 +1193,7 @@ Namba Ya Simu
 type="tel"
 id="phone"
 placeholder="Andika namba ya simu"
+maxlength="30"
 required>
 
 </div>
@@ -1186,16 +1259,15 @@ Maelezo Ya Ziada Au Tatizo La Kifaa
 
 <textarea
 id="commentTextBooking"
-placeholder="Eleza kwa ufupi tatizo la kifaa chako...">
-</textarea>
+maxlength="1000"
+placeholder="Eleza kwa ufupi tatizo la kifaa chako..."></textarea>
 
 </div>
 
-<button type="submit"
+<button
+type="submit"
 class="btn">
-
 💬 Tuma Ombi WhatsApp
-
 </button>
 
 </form>
@@ -1205,7 +1277,7 @@ class="btn">
 
 <!-- COMMENTS -->
 
-<section id="comments" class="comments-section">
+<section id="comments">
 
 <div class="title">
 
@@ -1226,7 +1298,7 @@ Acha maoni yako na rating kwa huduma tulizokupatia
 </h3>
 
 <p>
-Skana QR Code hii kwa simu yako ili uweze kuacha maoni kwa urahisi:
+Skana QR Code hii kwa simu yako ili uweze kuacha maoni kwa urahisi.
 </p>
 
 <div id="qrcode"></div>
@@ -1235,7 +1307,7 @@ Skana QR Code hii kwa simu yako ili uweze kuacha maoni kwa urahisi:
 
 <form
 class="comment-form"
-onsubmit="addComment(event)">
+id="commentForm">
 
 <div class="form-group">
 
@@ -1246,7 +1318,8 @@ Jina Lako
 <input
 type="text"
 id="commentName"
-placeholder="Andika jina yako..."
+placeholder="Andika jina lako..."
+maxlength="80"
 required>
 
 </div>
@@ -1259,40 +1332,19 @@ Rating Yako
 
 <div class="rating">
 
-<input type="radio"
-name="rating"
-id="star5"
-value="5"
-required>
-
+<input type="radio" name="rating" id="star5" value="5">
 <label for="star5">★</label>
 
-<input type="radio"
-name="rating"
-id="star4"
-value="4">
-
+<input type="radio" name="rating" id="star4" value="4">
 <label for="star4">★</label>
 
-<input type="radio"
-name="rating"
-id="star3"
-value="3">
-
+<input type="radio" name="rating" id="star3" value="3">
 <label for="star3">★</label>
 
-<input type="radio"
-name="rating"
-id="star2"
-value="2">
-
+<input type="radio" name="rating" id="star2" value="2">
 <label for="star2">★</label>
 
-<input type="radio"
-name="rating"
-id="star1"
-value="1">
-
+<input type="radio" name="rating" id="star1" value="1">
 <label for="star1">★</label>
 
 </div>
@@ -1307,18 +1359,16 @@ Maoni Yako
 
 <textarea
 id="commentText"
+maxlength="1000"
 placeholder="Andika maoni yako hapa..."
-required>
-</textarea>
+required></textarea>
 
 </div>
 
 <button
 class="btn comment-button"
 type="submit">
-
 💬 POST COMMENT
-
 </button>
 
 </form>
@@ -1399,13 +1449,15 @@ Tupo tayari kukuhudumia wakati wowote
 </p>
 
 <p>
-📞 <a href="tel:+255777574412">
+📞
+<a href="tel:+255777574412">
 0777 574 412
 </a>
 </p>
 
 <p>
-📧 <a href="mailto:mohdmussaomar72@gmail.com">
+📧
+<a href="mailto:mohdmussaomar72@gmail.com">
 mohdmussaomar72@gmail.com
 </a>
 </p>
@@ -1417,17 +1469,13 @@ href="https://wa.me/255777574412"
 target="_blank"
 rel="noopener"
 class="btn">
-
 💬 Ongea Nasi WhatsApp
-
 </a>
 
 </div>
 
 </section>
 
-
-<!-- FOOTER -->
 
 <footer>
 
@@ -1453,16 +1501,15 @@ class="whatsapp"
 href="https://wa.me/255777574412"
 target="_blank"
 rel="noopener"
-title="WhatsApp">
-
+title="WhatsApp"
+aria-label="WhatsApp">
 💬
-
 </a>
 
 
-<!-- ========================================= -->
-<!-- AI ASSISTANT -->
-<!-- ========================================= -->
+<!-- ================================================= -->
+<!-- ITsolution AI -->
+<!-- ================================================= -->
 
 <div
 class="ai-assistant"
@@ -1475,27 +1522,19 @@ id="aiAssistant">
 </div>
 
 <div>
-
-<h3>
-ITsolution AI
-</h3>
-
-<span>
-● Online
-</span>
-
+<h3>ITsolution AI</h3>
+<span>● Online</span>
 </div>
 
 <button
 class="ai-close"
-onclick="closeAI()">
-
+id="aiClose"
+type="button"
+aria-label="Funga AI">
 ×
-
 </button>
 
 </div>
-
 
 <div
 class="ai-messages"
@@ -1503,31 +1542,23 @@ id="aiMessages">
 
 <div class="ai-message bot">
 
-<b>Habari! 👋</b>
-
-<br><br>
+Habari! 👋
 
 Mimi ni <b>ITsolution AI Assistant</b>.
 
-<br><br>
-
 Naweza kukusaidia kuhusu:
 
-<br><br>
-
-💻 Computer<br>
-🖨️ Printer<br>
-📹 CCTV<br>
-🌐 Networking<br>
-📶 Wi-Fi<br>
-🔌 Network Cabling<br>
-🔐 Security<br>
-🖥️ Servers<br>
+💻 Computer
+🖨️ Printer
+📹 CCTV
+🌐 Networking
+📶 Wi-Fi
+🔌 Network Cabling
+🔐 Security
+🖥️ Servers
 📱 Technology
 
-<br><br>
-
-<strong>Mfano:</strong><br>
+<strong>Mfano:</strong>
 
 "CCTV yangu haionyeshi picha, nifanye nini?"
 
@@ -1535,21 +1566,20 @@ Naweza kukusaidia kuhusu:
 
 </div>
 
-
 <div class="ai-input-area">
 
 <input
 type="text"
 id="aiInput"
 placeholder="Uliza kuhusu teknolojia..."
-autocomplete="off">
+autocomplete="off"
+maxlength="2000">
 
 <button
 id="aiSendButton"
-onclick="sendAIMessage()">
-
+type="button"
+aria-label="Tuma ujumbe">
 ➤
-
 </button>
 
 </div>
@@ -1557,57 +1587,38 @@ onclick="sendAIMessage()">
 </div>
 
 
-<!-- AI OPEN BUTTON -->
-
 <button
 class="ai-open"
 id="aiOpen"
-onclick="openAI()"
-title="Fungua ITsolution AI">
-
+type="button"
+title="Fungua ITsolution AI"
+aria-label="Fungua ITsolution AI">
 🤖
-
 </button>
 
 
 <script>
 
-/* ========================================= */
-/* QR CODE */
-/* ========================================= */
+/* ================================================= */
+/* CONFIGURATION */
+/* ================================================= */
 
-window.addEventListener("DOMContentLoaded",function(){
+const AI_WORKER_URL =
+"https://itsolution-ai.mohdmussaomar72.workers.dev/";
 
-const currentUrl =
-window.location.origin +
-window.location.pathname +
-"#comments";
+/* ================================================= */
+/* DATE */
+/* ================================================= */
 
-if(
-typeof QRCode !== "undefined" &&
-document.getElementById("qrcode")
-){
+const today =
+new Date().toISOString().split("T")[0];
 
-new QRCode(
-document.getElementById("qrcode"),
-{
-text:currentUrl,
-width:140,
-height:140,
-colorDark:"#0a192f",
-colorLight:"#ffffff",
-correctLevel:QRCode.CorrectLevel.H
-}
-);
-
-}
-
-});
+document.getElementById("checkin").min = today;
 
 
-/* ========================================= */
+/* ================================================= */
 /* SLIDESHOW */
-/* ========================================= */
+/* ================================================= */
 
 const slides =
 document.querySelectorAll(".slide");
@@ -1615,577 +1626,339 @@ document.querySelectorAll(".slide");
 const dots =
 document.querySelectorAll(".dot");
 
-let currentSlide=0;
+let currentSlide = 0;
 
 function showSlide(index){
 
-slides.forEach(slide=>{
-slide.classList.remove("active");
-});
+  slides.forEach(function(slide){
+    slide.classList.remove("active");
+  });
 
-dots.forEach(dot=>{
-dot.classList.remove("active");
-});
+  dots.forEach(function(dot){
+    dot.classList.remove("active");
+  });
 
-if(slides[index]){
-slides[index].classList.add("active");
-}
+  if(slides[index]){
+    slides[index].classList.add("active");
+  }
 
-if(dots[index]){
-dots[index].classList.add("active");
-}
+  if(dots[index]){
+    dots[index].classList.add("active");
+  }
 
 }
 
 function nextSlide(){
 
-currentSlide =
-(currentSlide+1)%slides.length;
+  currentSlide =
+  (currentSlide + 1) % slides.length;
 
-showSlide(currentSlide);
+  showSlide(currentSlide);
 
 }
 
-setInterval(nextSlide,3000);
+setInterval(nextSlide,4000);
 
-dots.forEach((dot,index)=>{
+dots.forEach(function(dot,index){
 
-dot.addEventListener("click",()=>{
+  dot.addEventListener("click",function(){
 
-currentSlide=index;
+    currentSlide = index;
 
-showSlide(currentSlide);
+    showSlide(currentSlide);
+
+  });
 
 });
 
-});
 
-
-/* ========================================= */
+/* ================================================= */
 /* LANGUAGE */
-/* ========================================= */
+/* ================================================= */
 
-let currentLang="SW";
+let currentLang = "SW";
+
+const translations = {
+
+  SW:{
+    heroTitle:"MASHIRIKA NA HUDUMA ZOTE ZA IT",
+    heroText:"Tunatengeneza Computer, Printer, Networking Cabling na Wi-Fi ya Kasi",
+    heroBtn:"Omba Huduma Sasa",
+    aboutTitle:"Kuhusu IT Solutions",
+    aboutSub:"Wataalamu waliofuzu katika masuala ya Teknolojia ya Habari na Mawasiliano",
+    aboutP1:"Tunajihusisha na utatuzi wa changamoto zote za IT na mtandao kwa maofisi, majumba ya biashara, na majumbani.",
+    aboutP2:"Timu yetu ina uzoefu wa hali ya juu katika matengenezo ya kompyuta, printer, usimikaji wa Structured Network Cabling na Wi-Fi Networking yenye ulinzi madhubuti."
+  },
+
+  EN:{
+    heroTitle:"ALL IT SOLUTIONS & SERVICES",
+    heroText:"Computer Repair, Printer Services, Network Cabling and High-Speed Wi-Fi",
+    heroBtn:"Request Service Now",
+    aboutTitle:"About IT Solutions",
+    aboutSub:"Qualified professionals in Information and Communication Technology",
+    aboutP1:"We provide IT and networking solutions for offices, businesses and homes.",
+    aboutP2:"Our team has strong experience in computer repairs, printer maintenance, structured network cabling and secure Wi-Fi networking."
+  }
+
+};
 
 function toggleLanguage(){
 
-currentLang =
-currentLang==="SW" ? "EN" : "SW";
+  currentLang =
+  currentLang === "SW" ? "EN" : "SW";
 
-document.getElementById("langBtn").textContent =
-currentLang==="EN"
-? "Kiswahili 🇹🇿"
-: "English 🇬🇧";
+  const t =
+  translations[currentLang];
+
+  document.getElementById("heroTitle").textContent =
+  t.heroTitle;
+
+  document.getElementById("heroText").textContent =
+  t.heroText;
+
+  document.getElementById("heroBtn").textContent =
+  t.heroBtn;
+
+  document.getElementById("aboutTitle").textContent =
+  t.aboutTitle;
+
+  document.getElementById("aboutSub").textContent =
+  t.aboutSub;
+
+  document.getElementById("aboutP1").textContent =
+  t.aboutP1;
+
+  document.getElementById("aboutP2").textContent =
+  t.aboutP2;
+
+  document.querySelectorAll("[data-sw]").forEach(function(el){
+
+    el.textContent =
+    el.dataset[currentLang === "SW" ? "sw" : "en"];
+
+  });
+
+  document.getElementById("langBtn").textContent =
+  currentLang === "SW"
+  ? "English 🇬🇧"
+  : "Kiswahili 🇹🇿";
 
 }
 
+document.getElementById("langBtn")
+.addEventListener("click",toggleLanguage);
 
-/* ========================================= */
-/* BOOKING WHATSAPP */
-/* ========================================= */
 
-function sendBooking(event){
+/* ================================================= */
+/* BOOKING */
+/* ================================================= */
 
-event.preventDefault();
+document
+.getElementById("bookingForm")
+.addEventListener("submit",function(event){
 
-const name =
-document.getElementById("name").value;
+  event.preventDefault();
 
-const phone =
-document.getElementById("phone").value;
+  const name =
+  document.getElementById("name").value.trim();
 
-const service =
-document.getElementById("room").value;
+  const phone =
+  document.getElementById("phone").value.trim();
 
-const date =
-document.getElementById("checkin").value;
+  const service =
+  document.getElementById("room").value;
 
-const details =
-document.getElementById("commentTextBooking").value;
+  const date =
+  document.getElementById("checkin").value;
 
-const message =
+  const details =
+  document.getElementById("commentTextBooking").value.trim();
+
+  if(!name || !phone || !service || !date){
+
+    alert("Tafadhali jaza taarifa zote muhimu.");
+
+    return;
+
+  }
+
+  const message =
 `OMBI LA HUDUMA YA IT
 
 Jina: ${name}
 Simu: ${phone}
 Huduma: ${service}
 Tarehe: ${date}
-Maelezo: ${details}`;
 
-window.open(
-"https://wa.me/255777574412?text="
-+
-encodeURIComponent(message),
-"_blank"
-);
+Maelezo:
+${details || "Hakuna maelezo ya ziada."}`;
 
-}
+  const url =
+  "https://wa.me/255777574412?text=" +
+  encodeURIComponent(message);
+
+  window.open(url,"_blank");
+
+});
 
 
-/* ========================================= */
+/* ================================================= */
 /* COMMENTS */
-/* ========================================= */
+/* ================================================= */
 
-function addComment(event){
-
-event.preventDefault();
-
-const name =
-document.getElementById("commentName").value.trim();
-
-const text =
-document.getElementById("commentText").value.trim();
-
-const rating =
-document.querySelector(
-'input[name="rating"]:checked'
-);
-
-if(!rating){
-
-alert("Tafadhali chagua rating.");
-
-return;
-
-}
-
-const stars =
-"★".repeat(Number(rating.value))
-+
-"☆".repeat(
-5-Number(rating.value)
-);
-
-const card =
-document.createElement("div");
-
-card.className="comment-card";
-
-const title =
-document.createElement("h4");
-
-title.textContent =
-"👤 "+name;
-
-const star =
-document.createElement("div");
-
-star.className="comment-stars";
-
-star.textContent=stars;
-
-const paragraph =
-document.createElement("p");
-
-paragraph.textContent=text;
-
-card.appendChild(title);
-card.appendChild(star);
-card.appendChild(paragraph);
-
-const list =
+const commentsList =
 document.getElementById("commentsList");
 
-list.insertBefore(
-card,
-list.firstChild
+const savedComments =
+JSON.parse(
+  localStorage.getItem("itsolution_comments") || "[]"
 );
 
-document.getElementById("commentName").value="";
-document.getElementById("commentText").value="";
+function renderComment(comment){
 
-rating.checked=false;
+  const card =
+  document.createElement("div");
 
-alert("✅ Asante! Comment yako imeongezwa.");
+  card.className =
+  "comment-card";
 
-}
+  const title =
+  document.createElement("h4");
 
+  title.textContent =
+  "👤 " + comment.name;
 
-/* ========================================= */
-/* AI OPEN / CLOSE */
-/* ========================================= */
+  const stars =
+  document.createElement("div");
 
-function openAI(){
+  stars.className =
+  "comment-stars";
 
-document.getElementById(
-"aiAssistant"
-).style.display="flex";
+  stars.textContent =
+  "★".repeat(comment.rating) +
+  "☆".repeat(5 - comment.rating);
 
-document.getElementById(
-"aiOpen"
-).style.display="none";
+  const text =
+  document.createElement("p");
 
-document.getElementById(
-"aiInput"
-).focus();
+  text.textContent =
+  comment.text;
 
-}
+  card.appendChild(title);
+  card.appendChild(stars);
+  card.appendChild(text);
 
-
-function closeAI(){
-
-document.getElementById(
-"aiAssistant"
-).style.display="none";
-
-document.getElementById(
-"aiOpen"
-).style.display="block";
+  commentsList.insertBefore(
+    card,
+    commentsList.firstChild
+  );
 
 }
 
+savedComments.reverse().forEach(renderComment);
 
-/* ========================================= */
-/* CLOUDFLARE AI WORKER */
-/* ========================================= */
 
-const AI_WORKER_URL =
-"https://itsolution-ai.mohdmussaomar72.workers.dev/";
+document
+.getElementById("commentForm")
+.addEventListener("submit",function(event){
 
+  event.preventDefault();
 
-/* ========================================= */
-/* SEND MESSAGE TO CLOUDFLARE */
-/* ========================================= */
+  const name =
+  document.getElementById("commentName").value.trim();
 
-async function sendAIMessage(){
+  const text =
+  document.getElementById("commentText").value.trim();
 
-const input =
-document.getElementById("aiInput");
+  const rating =
+  document.querySelector(
+    'input[name="rating"]:checked'
+  );
 
-const messages =
-document.getElementById("aiMessages");
+  if(!rating){
 
-const button =
-document.getElementById("aiSendButton");
+    alert("Tafadhali chagua rating.");
 
-const question =
-input.value.trim();
+    return;
 
-if(!question){
+  }
 
-return;
+  const comment = {
 
-}
+    name:name,
 
+    text:text,
 
-/* USER MESSAGE */
+    rating:Number(rating.value),
 
-const userMessage =
-document.createElement("div");
+    date:new Date().toISOString()
 
-userMessage.className =
-"ai-message user";
+  };
 
-userMessage.textContent =
-question;
+  const comments =
+  JSON.parse(
+    localStorage.getItem("itsolution_comments") || "[]"
+  );
 
-messages.appendChild(
-userMessage
-);
+  comments.push(comment);
 
-input.value="";
+  localStorage.setItem(
+    "itsolution_comments",
+    JSON.stringify(comments)
+  );
 
-messages.scrollTop =
-messages.scrollHeight;
+  renderComment(comment);
 
+  this.reset();
 
-/* DISABLE BUTTON */
+  alert(
+    "✅ Asante! Maoni yako yameongezwa."
+  );
 
-button.disabled=true;
+});
 
-button.style.opacity=".6";
 
+/* ================================================= */
+/* QR CODE */
+/* ================================================= */
 
-/* THINKING */
+window.addEventListener(
+"DOMContentLoaded",
+function(){
 
-const loading =
-document.createElement("div");
+  const currentUrl =
+  window.location.origin +
+  window.location.pathname +
+  "#comments";
 
-loading.className =
-"ai-message bot";
+  const qr =
+  document.getElementById("qrcode");
 
-loading.innerHTML =
-"🤔 <b>ITsolution AI inafikiria...</b>";
+  if(
+    typeof QRCode !== "undefined" &&
+    qr
+  ){
 
-messages.appendChild(
-loading
-);
+    new QRCode(
+      qr,
+      {
+        text:currentUrl,
+        width:150,
+        height:150,
+        colorDark:"#0a192f",
+        colorLight:"#ffffff",
+        correctLevel:QRCode.CorrectLevel.H
+      }
+    );
 
-messages.scrollTop =
-messages.scrollHeight;
+  }
 
+});
 
-try{
 
-/* SEND TO CLOUDFLARE WORKER */
-
-const response =
-await fetch(
-AI_WORKER_URL,
-{
-method:"POST",
-
-headers:{
-"Content-Type":"application/json"
-},
-
-body:JSON.stringify({
-prompt:question
-})
-
-}
-);
-
-
-/* HTTP ERROR */
-
-if(!response.ok){
-
-throw new Error(
-"HTTP "+response.status
-);
-
-}
-
-
-/* GET JSON */
-
-const data =
-await response.json();
-
-
-loading.remove();
-
-
-/* GET AI ANSWER */
-
-let aiText =
-data.response ||
-data.result ||
-data.text ||
-data.message;
-
-
-/* IF WORKER RETURNS OBJECT */
-
-if(
-typeof aiText === "object"
-){
-
-aiText =
-JSON.stringify(aiText);
-
-}
-
-
-if(!aiText){
-
-aiText =
-"Samahani, sijapata jibu kutoka kwa AI kwa sasa.";
-
-}
-
-
-/* AI MESSAGE */
-
-const answer =
-document.createElement("div");
-
-answer.className =
-"ai-message bot";
-
-/*
-  Tunatumia textContent badala ya innerHTML
-  ili majibu ya AI yasiingize HTML hatari.
-*/
-
-answer.textContent =
-aiText;
-
-
-messages.appendChild(
-answer
-);
-
-messages.scrollTop =
-messages.scrollHeight;
-
-
-}catch(error){
-
-console.error(
-"ITsolution AI Error:",
-error
-);
-
-loading.remove();
-
-
-const errorMessage =
-document.createElement("div");
-
-errorMessage.className =
-"ai-message bot";
-
-errorMessage.innerHTML = `
-❌ <b>Samahani.</b><br><br>
-
-ITsolution AI haijaweza kuwasiliana
-na server kwa sasa.<br><br>
-
-<strong>Jaribu tena baada ya muda.</strong>
-`;
-
-messages.appendChild(
-errorMessage
-);
-
-messages.scrollTop =
-messages.scrollHeight;
-
-}
-
-
-/* ENABLE BUTTON */
-
-button.disabled=false;
-
-button.style.opacity="1";
-
-}
-
-
-/* ========================================= */
-/* ENTER KEY */
-/* ========================================= */
-
-document.getElementById(
-"aiInput"
-).addEventListener(
-"keydown",
-function(event){
-
-if(event.key==="Enter"){
-
-event.preventDefault();
-
-sendAIMessage();
-
-}
-
-}
-);
-
-```html
-<!-- ========================================= -->
-<!-- ITsolution AI ASSISTANT -->
-<!-- ========================================= -->
-
-<div class="ai-assistant" id="aiAssistant">
-
-  <div class="ai-header">
-
-    <div class="ai-icon">
-      🤖
-    </div>
-
-    <div>
-      <h3>ITsolution AI</h3>
-      <span>● Online</span>
-    </div>
-
-    <button
-      class="ai-close"
-      id="aiClose"
-      type="button"
-      aria-label="Funga AI">
-      ×
-    </button>
-
-  </div>
-
-  <div class="ai-messages" id="aiMessages">
-
-    <div class="ai-message bot">
-
-      <b>Habari! 👋</b>
-
-      <br><br>
-
-      Mimi ni <b>ITsolution AI Assistant</b>.
-
-      <br><br>
-
-      Naweza kukusaidia kuhusu:
-
-      <br><br>
-
-      💻 Computer<br>
-      🖨️ Printer<br>
-      📹 CCTV<br>
-      🌐 Networking<br>
-      📶 Wi-Fi<br>
-      🔌 Network Cabling<br>
-      🔐 Security<br>
-      🖥️ Servers<br>
-      📱 Technology
-
-      <br><br>
-
-      <strong>Mfano:</strong><br>
-
-      "CCTV yangu haionyeshi picha, nifanye nini?"
-
-    </div>
-
-  </div>
-
-  <div class="ai-input-area">
-
-    <input
-      type="text"
-      id="aiInput"
-      placeholder="Uliza kuhusu teknolojia..."
-      autocomplete="off">
-
-    <button
-      id="aiSendButton"
-      type="button">
-      ➤
-    </button>
-
-  </div>
-
-</div>
-
-
-<!-- AI OPEN BUTTON -->
-
-<button
-  class="ai-open"
-  id="aiOpen"
-  type="button"
-  title="Fungua ITsolution AI"
-  aria-label="Fungua ITsolution AI">
-
-  🤖
-
-</button>
-
-
-<script>
-
-/* ========================================= */
-/* CLOUDFLARE AI WORKER */
-/* ========================================= */
-
-const AI_WORKER_URL =
-"https://itsolution-ai.mohdmussaomar72.workers.dev/";
-
-
-/* ========================================= */
-/* ELEMENTS */
-/* ========================================= */
+/* ================================================= */
+/* AI ELEMENTS */
+/* ================================================= */
 
 const aiAssistant =
 document.getElementById("aiAssistant");
@@ -2206,15 +1979,17 @@ const aiMessages =
 document.getElementById("aiMessages");
 
 
-/* ========================================= */
+/* ================================================= */
 /* OPEN AI */
-/* ========================================= */
+/* ================================================= */
 
 function openAI(){
 
-  aiAssistant.style.display = "flex";
+  aiAssistant.style.display =
+  "flex";
 
-  aiOpen.style.display = "none";
+  aiOpen.style.display =
+  "none";
 
   setTimeout(function(){
 
@@ -2225,109 +2000,130 @@ function openAI(){
 }
 
 
-/* ========================================= */
+/* ================================================= */
 /* CLOSE AI */
-/* ========================================= */
+/* ================================================= */
 
 function closeAI(){
 
-  aiAssistant.style.display = "none";
+  aiAssistant.style.display =
+  "none";
 
-  aiOpen.style.display = "flex";
+  aiOpen.style.display =
+  "flex";
+
+}
+
+aiOpen.addEventListener(
+"click",
+openAI
+);
+
+aiClose.addEventListener(
+"click",
+closeAI
+);
+
+
+/* ================================================= */
+/* ADD AI MESSAGE */
+/* ================================================= */
+
+function addAIMessage(
+  text,
+  type
+){
+
+  const message =
+  document.createElement("div");
+
+  message.className =
+  "ai-message " + type;
+
+  message.textContent =
+  text;
+
+  aiMessages.appendChild(
+  message
+  );
+
+  aiMessages.scrollTop =
+  aiMessages.scrollHeight;
+
+  return message;
 
 }
 
 
-/* ========================================= */
-/* BUTTON EVENTS */
-/* ========================================= */
+/* ================================================= */
+/* TYPING */
+/* ================================================= */
 
-aiOpen.addEventListener(
-  "click",
-  openAI
-);
+function addTyping(){
 
-aiClose.addEventListener(
-  "click",
-  closeAI
-);
+  const typing =
+  document.createElement("div");
+
+  typing.className =
+  "ai-message bot";
+
+  typing.innerHTML = `
+    <div class="typing">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  `;
+
+  aiMessages.appendChild(
+  typing
+  );
+
+  aiMessages.scrollTop =
+  aiMessages.scrollHeight;
+
+  return typing;
+
+}
 
 
-/* ========================================= */
-/* SEND MESSAGE */
-/* ========================================= */
+/* ================================================= */
+/* SEND AI */
+/* ================================================= */
+
+let aiBusy = false;
 
 async function sendAIMessage(){
+
+  if(aiBusy){
+    return;
+  }
 
   const question =
   aiInput.value.trim();
 
   if(!question){
-
     return;
-
   }
 
+  aiBusy = true;
 
-  /* USER MESSAGE */
-
-  const userMessage =
-  document.createElement("div");
-
-  userMessage.className =
-  "ai-message user";
-
-  userMessage.textContent =
-  question;
-
-  aiMessages.appendChild(
-  userMessage
+  addAIMessage(
+    question,
+    "user"
   );
-
-
-  /* CLEAR INPUT */
 
   aiInput.value = "";
 
-
-  /* SCROLL */
-
-  aiMessages.scrollTop =
-  aiMessages.scrollHeight;
-
-
-  /* DISABLE BUTTON */
-
   aiSendButton.disabled = true;
 
-  aiSendButton.style.opacity = "0.6";
-
-
-  /* THINKING MESSAGE */
+  aiSendButton.style.opacity =
+  ".6";
 
   const loading =
-  document.createElement("div");
-
-  loading.className =
-  "ai-message bot";
-
-  loading.innerHTML =
-  "🤔 <b>ITsolution AI inafikiria...</b>";
-
-  aiMessages.appendChild(
-  loading
-  );
-
-
-  aiMessages.scrollTop =
-  aiMessages.scrollHeight;
-
+  addTyping();
 
   try{
-
-    /* ===================================== */
-    /* SEND REQUEST TO CLOUDFLARE WORKER */
-    /* ===================================== */
 
     const response =
     await fetch(
@@ -2345,102 +2141,48 @@ async function sendAIMessage(){
       }
     );
 
-
-    /* ===================================== */
-    /* CHECK HTTP RESPONSE */
-    /* ===================================== */
-
     if(!response.ok){
 
       throw new Error(
-        "HTTP Error: " +
-        response.status
+        "HTTP " + response.status
       );
 
     }
 
-
-    /* ===================================== */
-    /* READ JSON */
-    /* ===================================== */
-
     const data =
     await response.json();
 
-
-    console.log(
-      "ITsolution AI response:",
-      data
-    );
-
-
-    /* REMOVE THINKING */
-
     loading.remove();
 
-
-    /* ===================================== */
-    /* GET AI RESPONSE */
-    /* ===================================== */
-
-    let aiText =
+    let answer =
       data.response ||
       data.result ||
       data.text ||
       data.message;
 
-
-    /* OBJECT RESPONSE */
-
     if(
-      typeof aiText === "object" &&
-      aiText !== null
+      typeof answer === "object" &&
+      answer !== null
     ){
 
-      aiText =
-      JSON.stringify(
-        aiText,
-        null,
-        2
-      );
+      answer =
+      answer.response ||
+      answer.text ||
+      JSON.stringify(answer);
 
     }
 
+    if(!answer){
 
-    /* NO RESPONSE */
-
-    if(!aiText){
-
-      aiText =
-      "Samahani, AI haikurudisha jibu kwa sasa. Tafadhali jaribu tena.";
+      answer =
+      "Samahani, ITsolution AI haikupata jibu kwa sasa. Tafadhali jaribu tena.";
 
     }
 
-
-    /* ===================================== */
-    /* CREATE AI MESSAGE */
-    /* ===================================== */
-
-    const answer =
-    document.createElement("div");
-
-    answer.className =
-    "ai-message bot";
-
-    answer.textContent =
-    aiText;
-
-
-    aiMessages.appendChild(
-    answer
+    addAIMessage(
+      answer,
+      "bot"
     );
-
-
-    /* SCROLL */
-
-    aiMessages.scrollTop =
-    aiMessages.scrollHeight;
-
 
   }catch(error){
 
@@ -2449,108 +2191,79 @@ async function sendAIMessage(){
       error
     );
 
-
-    /* REMOVE THINKING */
-
     loading.remove();
 
-
-    /* ERROR MESSAGE */
-
-    const errorMessage =
-    document.createElement("div");
-
-    errorMessage.className =
-    "ai-message bot";
-
-    errorMessage.innerHTML = `
-      ❌ <b>Samahani.</b>
-
-      <br><br>
-
-      ITsolution AI haijaweza
-      kuwasiliana na server kwa sasa.
-
-      <br><br>
-
-      Tafadhali hakikisha Cloudflare
-      Worker yako iko online kisha
-      ujaribu tena.
-    `;
-
-
-    aiMessages.appendChild(
-    errorMessage
+    addAIMessage(
+      "❌ Samahani. ITsolution AI haijaweza kuwasiliana na server kwa sasa. Hakikisha Cloudflare Worker yako iko online kisha ujaribu tena.",
+      "bot"
     );
 
+  }finally{
 
-    aiMessages.scrollTop =
-    aiMessages.scrollHeight;
+    aiBusy = false;
+
+    aiSendButton.disabled =
+    false;
+
+    aiSendButton.style.opacity =
+    "1";
+
+    aiInput.focus();
 
   }
-
-
-  /* ===================================== */
-  /* ENABLE BUTTON */
-  /* ===================================== */
-
-  aiSendButton.disabled = false;
-
-  aiSendButton.style.opacity = "1";
 
 }
 
 
-/* ========================================= */
+/* ================================================= */
 /* SEND BUTTON */
-/* ========================================= */
+/* ================================================= */
 
 aiSendButton.addEventListener(
-  "click",
-  sendAIMessage
+"click",
+sendAIMessage
 );
 
 
-/* ========================================= */
+/* ================================================= */
 /* ENTER KEY */
-/* ========================================= */
+/* ================================================= */
 
 aiInput.addEventListener(
-  "keydown",
-  function(event){
+"keydown",
+function(event){
 
-    if(event.key === "Enter"){
+  if(event.key === "Enter"){
 
-      event.preventDefault();
+    event.preventDefault();
 
-      sendAIMessage();
-
-    }
+    sendAIMessage();
 
   }
-);
+
+});
 
 
-/* ========================================= */
-/* IMPORTANT */
-/* ========================================= */
+/* ================================================= */
+/* ESC CLOSE */
+/* ================================================= */
 
-/*
-   Chatbot haitafunguka yenyewe.
-   User atabonyeza 🤖 kuifungua.
-*/
+document.addEventListener(
+"keydown",
+function(event){
 
-aiAssistant.style.display = "none";
+  if(
+    event.key === "Escape" &&
+    aiAssistant.style.display === "flex"
+  ){
 
-aiOpen.style.display = "flex";
+    closeAI();
+
+  }
+
+});
 
 </script>
 
 </body>
 </html>
-```
-
-
-</body>
-</html>
-```

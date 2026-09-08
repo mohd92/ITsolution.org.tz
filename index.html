@@ -2098,7 +2098,26 @@ document.getElementById(
 },500);
 
 });
+<!-- KITUFE NA DIRISHA LA AI -->
+<div class="ai-open-btn" onclick="toggleAIChat()">🤖</div>
 
+<div class="ai-chat-card" id="aiChatCard">
+  <div class="ai-card-header">
+    <h3>🤖 ITsolution AI</h3>
+    <button class="ai-close-btn" onclick="toggleAIChat()">✕</button>
+  </div>
+  
+  <div class="ai-card-body" id="aiMessages">
+    <div class="ai-message bot">
+      Habari! Mambo vipi? Mimi ni <b>ITsolution AI</b>. Niko hapa kukusaidia kwa maswali yoyote!
+    </div>
+  </div>
+
+  <div class="ai-card-footer">
+    <input type="text" id="aiInput" placeholder="Andika ujumbe wako hapa..." onkeypress="handleKeyPress(event)">
+    <button id="aiSendButton" onclick="sendAIMessage()">Tuma</button>
+  </div>
+</div>
 </script>
 
 </body>

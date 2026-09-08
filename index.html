@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="sw">
 <head>
@@ -66,14 +67,7 @@ nav a:hover{
   color:white;
   cursor:pointer;
   font-weight:bold;
-  transition:.3s;
 }
-
-.lang-btn:hover{
-  background:#008c9e;
-}
-
-/* HERO */
 
 .hero{
   height:100vh;
@@ -122,7 +116,6 @@ nav a:hover{
   font-size:52px;
   margin-bottom:15px;
   text-shadow:0 3px 10px #000;
-  color:#fff;
 }
 
 .hero p{
@@ -172,8 +165,6 @@ nav a:hover{
   opacity:1;
 }
 
-/* GENERAL */
-
 section{
   padding:80px 7%;
 }
@@ -193,8 +184,6 @@ section{
   color:#555;
   font-size:16px;
 }
-
-/* ABOUT */
 
 .about-box{
   max-width:950px;
@@ -229,8 +218,6 @@ section{
 .contact-info p{
   margin:8px 0;
 }
-
-/* WHY */
 
 .why{
   background:#e6f7f9;
@@ -267,8 +254,6 @@ section{
   line-height:1.5;
 }
 
-/* SERVICES */
-
 .services-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -302,8 +287,6 @@ section{
   line-height:1.6;
 }
 
-/* GALLERY */
-
 .gallery-section{
   background:#e6f7f9;
 }
@@ -330,8 +313,6 @@ section{
 .gallery-item:hover img{
   transform:scale(1.08);
 }
-
-/* BOOKING */
 
 .booking{
   background:#e6f7f9;
@@ -370,8 +351,6 @@ textarea{
   height:130px;
   resize:vertical;
 }
-
-/* REVIEWS */
 
 .comments-section{
   background:#f4f7f6;
@@ -473,8 +452,6 @@ textarea{
   line-height:1.7;
 }
 
-/* MAP */
-
 .map-container{
   max-width:1000px;
   margin:auto;
@@ -486,8 +463,6 @@ textarea{
   border:0;
   border-radius:15px;
 }
-
-/* CONTACT */
 
 .contact-box{
   max-width:700px;
@@ -510,8 +485,6 @@ textarea{
   font-weight:bold;
 }
 
-/* FOOTER */
-
 footer{
   background:#0a192f;
   color:white;
@@ -522,8 +495,6 @@ footer{
 footer p{
   margin:7px;
 }
-
-/* WHATSAPP */
 
 .whatsapp{
   position:fixed;
@@ -544,9 +515,9 @@ footer p{
 }
 
 
-/* ========================================= */
-/*              AI ASSISTANT                 */
-/* ========================================= */
+/* ============================= */
+/* AI ASSISTANT */
+/* ============================= */
 
 .ai-assistant{
   position:fixed;
@@ -558,7 +529,7 @@ footer p{
   border-radius:18px;
   box-shadow:0 12px 40px rgba(0,0,0,.28);
   overflow:hidden;
-  display:flex;
+  display:none;
   flex-direction:column;
   z-index:9997;
   border:1px solid #ddd;
@@ -593,6 +564,15 @@ footer p{
 .ai-header span{
   font-size:12px;
   color:#e0ffff;
+}
+
+.ai-close{
+  margin-left:auto;
+  background:transparent;
+  color:white;
+  border:none;
+  font-size:20px;
+  cursor:pointer;
 }
 
 .ai-messages{
@@ -662,17 +642,6 @@ footer p{
   background:#008c9e;
 }
 
-.ai-close{
-  margin-left:auto;
-  background:transparent;
-  color:white;
-  border:none;
-  font-size:20px;
-  cursor:pointer;
-}
-
-/* AI OPEN BUTTON */
-
 .ai-open{
   position:fixed;
   right:20px;
@@ -692,6 +661,7 @@ footer p{
 .ai-open:hover{
   transform:scale(1.08);
 }
+
 
 /* MOBILE */
 
@@ -760,13 +730,10 @@ footer p{
   }
 
 }
-
 </style>
 </head>
 
 <body>
-
-<!-- HEADER -->
 
 <header>
 
@@ -775,21 +742,19 @@ footer p{
 </div>
 
 <nav>
-
-<a href="#home" id="navHome">Nyumbani</a>
-<a href="#about" id="navAbout">Kuhusu Sisi</a>
-<a href="#services" id="navServices">Huduma Zetu</a>
-<a href="#gallery" id="navGallery">Picha Za Kazi</a>
-<a href="#booking" id="navBooking">Omba Huduma</a>
-<a href="#comments" id="navComments">Maoni</a>
-<a href="#contact" id="navContact">Mawasiliano</a>
+<a href="#home">Nyumbani</a>
+<a href="#about">Kuhusu Sisi</a>
+<a href="#services">Huduma Zetu</a>
+<a href="#gallery">Picha Za Kazi</a>
+<a href="#booking">Omba Huduma</a>
+<a href="#comments">Maoni</a>
+<a href="#contact">Mawasiliano</a>
 
 <button class="lang-btn"
 id="langBtn"
 onclick="toggleLanguage()">
 English 🇬🇧
 </button>
-
 </nav>
 
 </header>
@@ -838,13 +803,11 @@ Omba Huduma Sasa
 </div>
 
 <div class="dots">
-
 <span class="dot active"></span>
 <span class="dot"></span>
 <span class="dot"></span>
 <span class="dot"></span>
 <span class="dot"></span>
-
 </div>
 
 </section>
@@ -901,8 +864,7 @@ mohdmussaomar72@gmail.com
 <a href="https://wa.me/255777574412"
 target="_blank"
 rel="noopener"
-class="btn"
-id="aboutBtn">
+class="btn">
 
 Tuma Ujumbe WhatsApp
 
@@ -919,11 +881,11 @@ Tuma Ujumbe WhatsApp
 
 <div class="title">
 
-<h2 id="whyTitle">
+<h2>
 Kwa Nini Utuchague Sisi?
 </h2>
 
-<p id="whySub">
+<p>
 Kazi bora, za haraka na zenye uhakika wa hali ya juu
 </p>
 
@@ -933,48 +895,48 @@ Kazi bora, za haraka na zenye uhakika wa hali ya juu
 
 <div class="feature">
 <div class="icon">🖥️</div>
-<h3 id="f1Title">Ufundi Wa Kompyuta</h3>
-<p id="f1Desc">
+<h3>Ufundi Wa Kompyuta</h3>
+<p>
 Tunatengeneza Hardware & Software za aina zote za Kompyuta na Laptop.
 </p>
 </div>
 
 <div class="feature">
 <div class="icon">🖨️</div>
-<h3 id="f2Title">Printer Maintenance</h3>
-<p id="f2Desc">
+<h3>Printer Maintenance</h3>
+<p>
 Kusafisha, kujaza wino na kutengeneza printer za aina zote.
 </p>
 </div>
 
 <div class="feature">
 <div class="icon">🔌</div>
-<h3 id="f3Title">Network Cabling</h3>
-<p id="f3Desc">
-Uwekaji wa waya za mtandao (Cat6/Cat6a) kwa ustadi na mpangilio mzuri.
+<h3>Network Cabling</h3>
+<p>
+Uwekaji wa waya za mtandao Cat6/Cat6a kwa ustadi na mpangilio mzuri.
 </p>
 </div>
 
 <div class="feature">
 <div class="icon">📶</div>
-<h3 id="f4Title">Wi-Fi High-Speed</h3>
-<p id="f4Desc">
-Kufunga na kuweka configuration za Access Points & Routers zenye kasi.
+<h3>Wi-Fi High-Speed</h3>
+<p>
+Kufunga na kuweka configuration za Access Points & Routers.
 </p>
 </div>
 
 <div class="feature">
 <div class="icon">🔒</div>
-<h3 id="f5Title">CCTV & Security</h3>
-<p id="f5Desc">
-Ufungaji wa Camera za ulinzi (CCTV) na security systems.
+<h3>CCTV & Security</h3>
+<p>
+Ufungaji wa Camera za ulinzi CCTV na security systems.
 </p>
 </div>
 
 <div class="feature">
 <div class="icon">⚡</div>
-<h3 id="f6Title">Huduma Ya Haraka</h3>
-<p id="f6Desc">
+<h3>Huduma Ya Haraka</h3>
+<p>
 Tunamfikia mteja mahali alipo kwa wakati muafaka.
 </p>
 </div>
@@ -990,11 +952,11 @@ Tunamfikia mteja mahali alipo kwa wakati muafaka.
 
 <div class="title">
 
-<h2 id="servTitle">
+<h2>
 Huduma Zetu Za IT
 </h2>
 
-<p id="servSub">
+<p>
 Tazama huduma zote za kiufundi tunazotoa
 </p>
 
@@ -1008,12 +970,11 @@ Tazama huduma zote za kiufundi tunazotoa
 
 <div class="service-content">
 
-<h3 id="s1Title">
-🖥️ Matengenezo ya Computer
-</h3>
+<h3>🖥️ Matengenezo ya Computer</h3>
 
-<p id="s1Desc">
-Ukarabati wa Laptop na Desktop, kubadilisha vioo, OS Installation, na kuondoa Virusi.
+<p>
+Ukarabati wa Laptop na Desktop, kubadilisha vioo,
+OS Installation, na kuondoa Virusi.
 </p>
 
 </div>
@@ -1027,12 +988,11 @@ Ukarabati wa Laptop na Desktop, kubadilisha vioo, OS Installation, na kuondoa Vi
 
 <div class="service-content">
 
-<h3 id="s2Title">
-🖨️ Matengenezo ya Printer
-</h3>
+<h3>🖨️ Matengenezo ya Printer</h3>
 
-<p id="s2Desc">
-Ukarabati wa Printer za LaserJet na InkJet, kubadilisha Cartridge na Roller servicing.
+<p>
+Ukarabati wa Printer za LaserJet na InkJet,
+kubadilisha Cartridge na Roller servicing.
 </p>
 
 </div>
@@ -1046,12 +1006,11 @@ Ukarabati wa Printer za LaserJet na InkJet, kubadilisha Cartridge na Roller serv
 
 <div class="service-content">
 
-<h3 id="s3Title">
-🔌 Network Cabling & Patch Panels
-</h3>
+<h3>🔌 Network Cabling & Patch Panels</h3>
 
-<p id="s3Desc">
-Kuvuta waya za LAN maofisini na majumbani, termination za RJ45, na Trunking za kitaalamu.
+<p>
+Kuvuta waya za LAN maofisini na majumbani,
+termination za RJ45, na Trunking za kitaalamu.
 </p>
 
 </div>
@@ -1065,12 +1024,11 @@ Kuvuta waya za LAN maofisini na majumbani, termination za RJ45, na Trunking za k
 
 <div class="service-content">
 
-<h3 id="s4Title">
-📶 Wi-Fi & Access Point Configuration
-</h3>
+<h3>📶 Wi-Fi & Access Point Configuration</h3>
 
-<p id="s4Desc">
-Kufunga Routers, Mikrotik, UniFi Access Points na kuhakikisha mtandao unafika kila kona.
+<p>
+Kufunga Routers, Mikrotik, UniFi Access Points
+na kuhakikisha mtandao unafika kila kona.
 </p>
 
 </div>
@@ -1088,11 +1046,11 @@ Kufunga Routers, Mikrotik, UniFi Access Points na kuhakikisha mtandao unafika ki
 
 <div class="title">
 
-<h2 id="galTitle">
+<h2>
 📸 Picha Za Kazi Na Operations
 </h2>
 
-<p id="galSub">
+<p>
 Tazama baadhi ya kazi zetu za IT zilizokamilika
 </p>
 
@@ -1127,11 +1085,11 @@ Tazama baadhi ya kazi zetu za IT zilizokamilika
 
 <div class="title">
 
-<h2 id="bookTitle">
+<h2>
 📅 Omba Huduma / Rekebisha Vifaa Vyakho
 </h2>
 
-<p id="bookSub">
+<p>
 Jaza maelezo yako na ututumie maombi yako moja kwa moja kupitia WhatsApp.
 </p>
 
@@ -1141,65 +1099,65 @@ Jaza maelezo yako na ututumie maombi yako moja kwa moja kupitia WhatsApp.
 
 <div class="form-group">
 
-<label for="name" id="lbl1">
+<label for="name">
 Jina Lako Kamili
 </label>
 
-<input type="text"
+<input
+type="text"
 id="name"
 placeholder="Andika jina yako"
 required>
 
 </div>
 
-
 <div class="form-group">
 
-<label for="phone" id="lbl2">
+<label for="phone">
 Namba Ya Simu
 </label>
 
-<input type="tel"
+<input
+type="tel"
 id="phone"
 placeholder="Andika namba ya simu"
 required>
 
 </div>
 
-
 <div class="form-group">
 
-<label for="room" id="lbl3">
+<label for="room">
 Aina Ya Huduma Unayohitaji
 </label>
 
 <select id="room" required>
 
-<option value="" id="optDefault">
+<option value="">
 -- Chagua Huduma --
 </option>
 
-<option id="opt1">
+<option>
 Matengenezo ya Computer / Laptop
 </option>
 
-<option id="opt2">
+<option>
 Matengenezo ya Printer
 </option>
 
-<option id="opt3">
+<option>
 Network Cabling (Waya za LAN)
 </option>
 
-<option id="opt4">
+<option>
 Wi-Fi Setup & Configuration
 </option>
 
-<option id="opt5">
+<option>
 CCTV Camera Installation
 </option>
 
-<option id="opt6">
+<option>
 Ushauri na Huduma Nyingine za IT
 </option>
 
@@ -1207,23 +1165,22 @@ Ushauri na Huduma Nyingine za IT
 
 </div>
 
-
 <div class="form-group">
 
-<label for="checkin" id="lbl4">
+<label for="checkin">
 Tarehe Unayohitaji Huduma
 </label>
 
-<input type="date"
+<input
+type="date"
 id="checkin"
 required>
 
 </div>
 
-
 <div class="form-group">
 
-<label for="commentTextBooking" id="lbl5">
+<label for="commentTextBooking">
 Maelezo Ya Ziada Au Tatizo La Kifaa
 </label>
 
@@ -1235,8 +1192,7 @@ placeholder="Eleza kwa ufupi tatizo la kifaa chako...">
 </div>
 
 <button type="submit"
-class="btn"
-id="bookBtn">
+class="btn">
 
 💬 Tuma Ombi WhatsApp
 
@@ -1247,30 +1203,29 @@ id="bookBtn">
 </section>
 
 
-<!-- REVIEWS -->
+<!-- COMMENTS -->
 
 <section id="comments" class="comments-section">
 
 <div class="title">
 
-<h2 id="revTitle">
+<h2>
 ⭐ Maoni Ya Wateja
 </h2>
 
-<p id="revSub">
+<p>
 Acha maoni yako na rating kwa huduma tulizokupatia
 </p>
 
 </div>
 
-
 <div class="qr-display-box">
 
-<h3 id="qrTitle">
+<h3>
 📱 Skana Ili Kuacha Maoni!
 </h3>
 
-<p id="qrSub">
+<p>
 Skana QR Code hii kwa simu yako ili uweze kuacha maoni kwa urahisi:
 </p>
 
@@ -1278,28 +1233,27 @@ Skana QR Code hii kwa simu yako ili uweze kuacha maoni kwa urahisi:
 
 </div>
 
-
-<form class="comment-form"
+<form
+class="comment-form"
 onsubmit="addComment(event)">
 
 <div class="form-group">
 
-<label for="commentName"
-id="lblRevName">
+<label for="commentName">
 Jina Lako
 </label>
 
-<input type="text"
+<input
+type="text"
 id="commentName"
 placeholder="Andika jina yako..."
 required>
 
 </div>
 
-
 <div class="form-group">
 
-<label id="lblRating">
+<label>
 Rating Yako
 </label>
 
@@ -1345,11 +1299,9 @@ value="1">
 
 </div>
 
-
 <div class="form-group">
 
-<label for="commentText"
-id="lblRevText">
+<label for="commentText">
 Maoni Yako
 </label>
 
@@ -1361,10 +1313,9 @@ required>
 
 </div>
 
-
-<button class="btn comment-button"
-type="submit"
-id="postBtn">
+<button
+class="btn comment-button"
+type="submit">
 
 💬 POST COMMENT
 
@@ -1372,8 +1323,8 @@ id="postBtn">
 
 </form>
 
-
-<div class="comments-container"
+<div
+class="comments-container"
 id="commentsList">
 
 <div class="comment-card">
@@ -1381,11 +1332,12 @@ id="commentsList">
 <h4>👤 Rashid Khamis</h4>
 
 <div class="comment-stars">
-★★★★
+★★★★☆
 </div>
 
-<p id="sampleRev">
-Walitufungia Wi-Fi na Cabling ofisini kwetu, kazi ilikuwa safi sana na mtandao una kasi ya ajabu!
+<p>
+Walitufungia Wi-Fi na Cabling ofisini kwetu,
+kazi ilikuwa safi sana na mtandao una kasi ya ajabu!
 </p>
 
 </div>
@@ -1401,7 +1353,7 @@ Walitufungia Wi-Fi na Cabling ofisini kwetu, kazi ilikuwa safi sana na mtandao u
 
 <div class="title">
 
-<h2 id="mapTitle">
+<h2>
 📍 Mahali Tunapopatikana
 </h2>
 
@@ -1430,16 +1382,15 @@ title="Google Map">
 
 <div class="title">
 
-<h2 id="contactTitle">
+<h2>
 📞 Mawasiliano
 </h2>
 
-<p id="contactSub">
+<p>
 Tupo tayari kukuhudumia wakati wowote
 </p>
 
 </div>
-
 
 <div class="contact-box">
 
@@ -1461,11 +1412,11 @@ mohdmussaomar72@gmail.com
 
 <br>
 
-<a href="https://wa.me/255777574412"
+<a
+href="https://wa.me/255777574412"
 target="_blank"
 rel="noopener"
-class="btn"
-id="contactBtn">
+class="btn">
 
 💬 Ongea Nasi WhatsApp
 
@@ -1497,20 +1448,25 @@ Zanzibar, Tanzania
 
 <!-- WHATSAPP -->
 
-<a class="whatsapp"
+<a
+class="whatsapp"
 href="https://wa.me/255777574412"
 target="_blank"
 rel="noopener"
 title="WhatsApp">
+
 💬
+
 </a>
 
 
 <!-- ========================================= -->
-<!--              AI ASSISTANT                 -->
+<!-- AI ASSISTANT -->
 <!-- ========================================= -->
 
-<div class="ai-assistant" id="aiAssistant">
+<div
+class="ai-assistant"
+id="aiAssistant">
 
 <div class="ai-header">
 
@@ -1521,7 +1477,7 @@ title="WhatsApp">
 <div>
 
 <h3>
-IT Solution AI
+ITsolution AI
 </h3>
 
 <span>
@@ -1530,15 +1486,19 @@ IT Solution AI
 
 </div>
 
-<button class="ai-close"
+<button
+class="ai-close"
 onclick="closeAI()">
+
 ×
+
 </button>
 
 </div>
 
 
-<div class="ai-messages"
+<div
+class="ai-messages"
 id="aiMessages">
 
 <div class="ai-message bot">
@@ -1547,11 +1507,11 @@ id="aiMessages">
 
 <br><br>
 
-Mimi ni <b>IT Solution AI Assistant</b>.
+Mimi ni <b>ITsolution AI Assistant</b>.
 
 <br><br>
 
-Niulize swali lako kuhusu teknolojia.
+Naweza kukusaidia kuhusu:
 
 <br><br>
 
@@ -1568,6 +1528,7 @@ Niulize swali lako kuhusu teknolojia.
 <br><br>
 
 <strong>Mfano:</strong><br>
+
 "CCTV yangu haionyeshi picha, nifanye nini?"
 
 </div>
@@ -1581,12 +1542,14 @@ Niulize swali lako kuhusu teknolojia.
 type="text"
 id="aiInput"
 placeholder="Uliza kuhusu teknolojia..."
-autocomplete="off"
->
+autocomplete="off">
 
 <button
+id="aiSendButton"
 onclick="sendAIMessage()">
+
 ➤
+
 </button>
 
 </div>
@@ -1600,7 +1563,7 @@ onclick="sendAIMessage()">
 class="ai-open"
 id="aiOpen"
 onclick="openAI()"
-title="Fungua IT Solution AI">
+title="Fungua ITsolution AI">
 
 🤖
 
@@ -1620,6 +1583,11 @@ window.location.origin +
 window.location.pathname +
 "#comments";
 
+if(
+typeof QRCode !== "undefined" &&
+document.getElementById("qrcode")
+){
+
 new QRCode(
 document.getElementById("qrcode"),
 {
@@ -1631,6 +1599,8 @@ colorLight:"#ffffff",
 correctLevel:QRCode.CorrectLevel.H
 }
 );
+
+}
 
 });
 
@@ -1657,8 +1627,13 @@ dots.forEach(dot=>{
 dot.classList.remove("active");
 });
 
+if(slides[index]){
 slides[index].classList.add("active");
+}
+
+if(dots[index]){
 dots[index].classList.add("active");
+}
 
 }
 
@@ -1692,334 +1667,15 @@ showSlide(currentSlide);
 
 let currentLang="SW";
 
-const translations={
-
-EN:{
-
-langBtn:"Kiswahili 🇹🇿",
-
-navHome:"Home",
-navAbout:"About Us",
-navServices:"Services",
-navGallery:"Gallery",
-navBooking:"Book Service",
-navComments:"Reviews",
-navContact:"Contact",
-
-heroTitle:"COMPLETE IT OPERATIONS & SERVICES",
-
-heroText:
-"Computer & Printer Repairs, Network Cabling & High-Speed Wi-Fi",
-
-heroBtn:"Request Service Now",
-
-aboutTitle:"About IT Solutions",
-
-aboutSub:
-"Certified Professionals in Information & Communication Technology",
-
-aboutP1:
-"We specialize in resolving all IT and networking challenges for offices, businesses, and homes.",
-
-aboutP2:
-"Our expert team delivers high-level computer maintenance, printer servicing, structured cabling, and secure Wi-Fi networking.",
-
-aboutBtn:"Send WhatsApp Message",
-
-whyTitle:"Why Choose Us?",
-
-whySub:
-"Quality, fast, and highly reliable technical services",
-
-f1Title:"Computer Repair",
-
-f1Desc:
-"Hardware & Software solutions for all brands of Computers and Laptops.",
-
-f2Title:"Printer Maintenance",
-
-f2Desc:
-"Cleaning, refilling, and repairing all models of printers.",
-
-f3Title:"Network Cabling",
-
-f3Desc:
-"Neat and professional installation of network cabling (Cat6/Cat6a).",
-
-f4Title:"High-Speed Wi-Fi",
-
-f4Desc:
-"Installation and configuration of high-speed Routers & Access Points.",
-
-f5Title:"CCTV & Security",
-
-f5Desc:
-"Installation of security cameras (CCTV) and protection systems.",
-
-f6Title:"Fast Service",
-
-f6Desc:
-"We reach our clients promptly whenever and wherever needed.",
-
-servTitle:"Our IT Services",
-
-servSub:
-"Explore all technical services we provide",
-
-s1Title:"🖥️ Computer Repair & Maintenance",
-
-s1Desc:
-"Laptop & Desktop repairs, screen replacement, OS installation, and virus removal.",
-
-s2Title:"🖨️ Printer Repair & Servicing",
-
-s2Desc:
-"LaserJet and InkJet servicing, cartridge replacement, and roller maintenance.",
-
-s3Title:"🔌 Network Cabling & Patch Panels",
-
-s3Desc:
-"LAN cabling for offices/homes, RJ45 terminations, and neat trunking.",
-
-s4Title:"📶 Wi-Fi & Access Point Configuration",
-
-s4Desc:
-"Router, Mikrotik, and UniFi setup ensuring complete coverage.",
-
-galTitle:"📸 Operations & Work Gallery",
-
-galSub:
-"Take a look at some of our completed IT operations",
-
-bookTitle:"📅 Request Service / Repair Equipment",
-
-bookSub:
-"Fill in your details and send us your service request directly via WhatsApp.",
-
-lbl1:"Your Full Name",
-lbl2:"Phone Number",
-lbl3:"Required Service",
-
-optDefault:"-- Select Service --",
-
-opt1:"Computer / Laptop Repair",
-opt2:"Printer Repair & Servicing",
-opt3:"Network Cabling (LAN Cables)",
-opt4:"Wi-Fi Setup & Configuration",
-opt5:"CCTV Camera Installation",
-opt6:"IT Consultation & Other Services",
-
-lbl4:"Preferred Service Date",
-
-lbl5:"Additional Info / Issue Description",
-
-bookBtn:"💬 Send Request via WhatsApp",
-
-revTitle:"⭐ Customer Reviews",
-
-revSub:
-"Leave your review and rating for the services provided",
-
-qrTitle:"📱 Scan To Leave A Review!",
-
-qrSub:
-"Scan this QR Code with your phone to leave a quick review:",
-
-lblRevName:"Your Name",
-lblRating:"Your Rating",
-lblRevText:"Your Review",
-
-postBtn:"💬 POST REVIEW",
-
-sampleRev:
-"They installed Wi-Fi and structured cabling in our office. Excellent job and super fast internet!",
-
-mapTitle:"📍 Our Location",
-
-contactTitle:"📞 Contact Us",
-
-contactSub:
-"We are ready to assist you anytime",
-
-contactBtn:"💬 Chat With Us On WhatsApp"
-
-},
-
-SW:{
-
-langBtn:"English 🇬🇧",
-
-navHome:"Nyumbani",
-navAbout:"Kuhusu Sisi",
-navServices:"Huduma Zetu",
-navGallery:"Picha Za Kazi",
-navBooking:"Omba Huduma",
-navComments:"Maoni",
-navContact:"Mawasiliano",
-
-heroTitle:"MASHIRIKA NA HUDUMA ZOTE ZA IT",
-
-heroText:
-"Tunatengeneza Computer, Printer, Networking Cabling na Wi-Fi ya Kasi",
-
-heroBtn:"Omba Huduma Sasa",
-
-aboutTitle:"Kuhusu IT Solutions",
-
-aboutSub:
-"Wataalamu waliofuzu katika masuala ya Teknolojia ya Habari na Mawasiliano",
-
-aboutP1:
-"Tunajihusisha na utatuzi wa changamoto zote za IT na mtandao kwa maofisi, majumba ya biashara, na majumbani.",
-
-aboutP2:
-"Timu yetu ina uzoefu wa hali ya juu katika matengenezo ya kompyuta, printer, usimikaji wa Structured Network Cabling na Wi-Fi Networking yenye ulinzi madhubuti.",
-
-aboutBtn:"Tuma Ujumbe WhatsApp",
-
-whyTitle:"Kwa Nini Utuchague Sisi?",
-
-whySub:
-"Kazi bora, za haraka na zenye uhakika wa hali ya juu",
-
-f1Title:"Ufundi Wa Kompyuta",
-
-f1Desc:
-"Tunatengeneza Hardware & Software za aina zote za Kompyuta na Laptop.",
-
-f2Title:"Printer Maintenance",
-
-f2Desc:
-"Kusafisha, kujaza wino na kutengeneza printer za aina zote.",
-
-f3Title:"Network Cabling",
-
-f3Desc:
-"Uwekaji wa waya za mtandao (Cat6/Cat6a) kwa ustadi na mpangilio mzuri.",
-
-f4Title:"Wi-Fi High-Speed",
-
-f4Desc:
-"Kufunga na kuweka configuration za Access Points & Routers zenye kasi.",
-
-f5Title:"CCTV & Security",
-
-f5Desc:
-"Ufungaji wa Camera za ulinzi (CCTV) na security systems.",
-
-f6Title:"Huduma Ya Haraka",
-
-f6Desc:
-"Tunamfikia mteja mahali alipo kwa wakati muafaka.",
-
-servTitle:"Huduma Zetu Za IT",
-
-servSub:
-"Tazama huduma zote za kiufundi tunazotoa",
-
-s1Title:"🖥️ Matengenezo ya Computer",
-
-s1Desc:
-"Ukarabati wa Laptop na Desktop, kubadilisha vioo, OS Installation, na kuondoa Virusi.",
-
-s2Title:"🖨️ Matengenezo ya Printer",
-
-s2Desc:
-"Ukarabati wa Printer za LaserJet na InkJet, kubadilisha Cartridge na Roller servicing.",
-
-s3Title:"🔌 Network Cabling & Patch Panels",
-
-s3Desc:
-"Kuvuta waya za LAN maofisini na majumbani, termination za RJ45, na Trunking za kitaalamu.",
-
-s4Title:"📶 Wi-Fi & Access Point Configuration",
-
-s4Desc:
-"Kufunga Routers, Mikrotik, UniFi Access Points na kuhakikisha mtandao unafika kila kona.",
-
-galTitle:"📸 Picha Za Kazi Na Operations",
-
-galSub:
-"Tazama baadhi ya kazi zetu za IT zilizokamilika",
-
-bookTitle:"📅 Omba Huduma / Rekebisha Vifaa Vyakho",
-
-bookSub:
-"Jaza maelezo yako na ututumie maombi yako moja kwa moja kupitia WhatsApp.",
-
-lbl1:"Jina Lako Kamili",
-lbl2:"Namba Ya Simu",
-lbl3:"Aina Ya Huduma Unayohitaji",
-
-optDefault:"-- Chagua Huduma --",
-
-opt1:"Matengenezo ya Computer / Laptop",
-opt2:"Matengenezo ya Printer",
-opt3:"Network Cabling (Waya za LAN)",
-opt4:"Wi-Fi Setup & Configuration",
-opt5:"CCTV Camera Installation",
-opt6:"Ushauri na Huduma Nyingine za IT",
-
-lbl4:"Tarehe Unayohitaji Huduma",
-
-lbl5:"Maelezo Ya Ziada Au Tatizo La Kifaa",
-
-bookBtn:"💬 Tuma Ombi WhatsApp",
-
-revTitle:"⭐ Maoni Ya Wateja",
-
-revSub:
-"Acha maoni yako na rating kwa huduma tulizokupatia",
-
-qrTitle:"📱 Skana Ili Kuacha Maoni!",
-
-qrSub:
-"Skana QR Code hii kwa simu yako ili uweze kuacha maoni kwa urahisi:",
-
-lblRevName:"Jina Lako",
-lblRating:"Rating Yako",
-lblRevText:"Maoni Yako",
-
-postBtn:"💬 POST COMMENT",
-
-sampleRev:
-"Walitufungia Wi-Fi na Cabling ofisini kwetu, kazi ilikuwa safi sana na mtandao una kasi ya ajabu!",
-
-mapTitle:"📍 Mahali Tunapopatikana",
-
-contactTitle:"📞 Mawasiliano",
-
-contactSub:
-"Tupo tayari kukuhudumia wakati wowote",
-
-contactBtn:"💬 Ongea Nasi WhatsApp"
-
-}
-
-};
-
-
 function toggleLanguage(){
 
 currentLang =
 currentLang==="SW" ? "EN" : "SW";
 
-const langData =
-translations[currentLang];
-
-for(let key in langData){
-
-const el =
-document.getElementById(key);
-
-if(el){
-
-el.textContent =
-langData[key];
-
-}
-
-}
+document.getElementById("langBtn").textContent =
+currentLang==="EN"
+? "Kiswahili 🇹🇿"
+: "English 🇬🇧";
 
 }
 
@@ -2047,13 +1703,8 @@ document.getElementById("checkin").value;
 const details =
 document.getElementById("commentTextBooking").value;
 
-const title =
-currentLang==="EN"
-? "IT SERVICE REQUEST"
-: "OMBI LA HUDUMA YA IT";
-
 const message =
-`${title}
+`OMBI LA HUDUMA YA IT
 
 Jina: ${name}
 Simu: ${phone}
@@ -2092,11 +1743,7 @@ document.querySelector(
 
 if(!rating){
 
-alert(
-currentLang==="EN"
-? "Please select a rating."
-: "Tafadhali chagua rating."
-);
+alert("Tafadhali chagua rating.");
 
 return;
 
@@ -2144,21 +1791,12 @@ card,
 list.firstChild
 );
 
-document.getElementById(
-"commentName"
-).value="";
-
-document.getElementById(
-"commentText"
-).value="";
+document.getElementById("commentName").value="";
+document.getElementById("commentText").value="";
 
 rating.checked=false;
 
-alert(
-currentLang==="EN"
-? "✅ Thank you! Your review has been added."
-: "✅ Asante! Comment yako imeongezwa."
-);
+alert("✅ Asante! Comment yako imeongezwa.");
 
 }
 
@@ -2198,296 +1836,18 @@ document.getElementById(
 
 
 /* ========================================= */
-/* AI RESPONSE SYSTEM */
+/* CLOUDFLARE AI WORKER */
 /* ========================================= */
 
-function getAIResponse(question){
-
-const q =
-question.toLowerCase();
-
-
-/* CCTV */
-
-if(
-q.includes("cctv") ||
-q.includes("camera") ||
-q.includes("kamera")
-){
-
-if(
-q.includes("haionyeshi") ||
-q.includes("haionekani") ||
-q.includes("no signal") ||
-q.includes("black")
-){
-
-return `
-<b>📹 CCTV Troubleshooting</b><br><br>
-
-Kama CCTV haionyeshi picha, angalia haya:<br><br>
-
-1️⃣ Hakikisha camera ina power.<br>
-2️⃣ Angalia cable ya network/BNC.<br>
-3️⃣ Kama ni PoE, angalia PoE switch/NVR.<br>
-4️⃣ Angalia kama IP address ya camera ipo sahihi.<br>
-5️⃣ Restart camera na NVR.<br>
-6️⃣ Angalia HDMI/VGA ya monitor.<br><br>
-
-Kama bado haifanyi kazi, niambie:
-<b>aina ya camera, NVR/DVR na tatizo linaloonekana kwenye screen.</b>
-`;
-
-}
-
-return `
-<b>📹 CCTV</b><br><br>
-
-Naweza kukusaidia kuhusu CCTV installation,
-NVR, DVR, IP Camera, PoE, cable, remote viewing
-na troubleshooting.<br><br>
-
-Niambie tatizo lako kwa mfano:
-<b>"CCTV yangu haionyeshi picha."</b>
-`;
-
-}
-
-
-/* WIFI */
-
-if(
-q.includes("wifi") ||
-q.includes("wi-fi") ||
-q.includes("internet")
-){
-
-if(
-q.includes("pole") ||
-q.includes("slow") ||
-q.includes("taratibu") ||
-q.includes("kasi")
-){
-
-return `
-<b>📶 Wi-Fi ni slow?</b><br><br>
-
-Jaribu haya:<br><br>
-
-1️⃣ Restart router.<br>
-2️⃣ Angalia idadi ya devices zilizounganishwa.<br>
-3️⃣ Weka router sehemu ya wazi.<br>
-4️⃣ Angalia signal strength.<br>
-5️⃣ Badilisha Wi-Fi channel ikiwa kuna interference.<br>
-6️⃣ Kama ni office, tumia Access Points badala ya router moja.<br><br>
-
-Nikiambiwa <b>aina ya router</b> na ukubwa wa eneo,
-naweza kukushauri setup nzuri.
-`;
-
-}
-
-return `
-<b>📶 Wi-Fi & Internet</b><br><br>
-
-Naweza kukusaidia kuhusu router,
-Access Point, Wi-Fi coverage, Mikrotik,
-internet speed na network configuration.<br><br>
-
-Niambie tatizo lako.
-`;
-
-}
-
-
-/* COMPUTER */
-
-if(
-q.includes("computer") ||
-q.includes("laptop") ||
-q.includes("pc")
-){
-
-if(
-q.includes("slow") ||
-q.includes("pole") ||
-q.includes("taratibu")
-){
-
-return `
-<b>💻 Computer iko slow?</b><br><br>
-
-Sababu zinaweza kuwa:<br><br>
-
-• RAM ndogo<br>
-• Hard disk ya zamani<br>
-• Startup programs nyingi<br>
-• Virus/malware<br>
-• Storage imejaa<br>
-• Windows issues<br><br>
-
-<b>Ushauri:</b> Kama computer ina HDD,
-kubadilisha kwenda <b>SSD</b> mara nyingi huleta tofauti kubwa sana ya speed.
-`;
-
-}
-
-return `
-<b>💻 Computer Support</b><br><br>
-
-Naweza kusaidia kuhusu Windows,
-drivers, software, hardware, RAM,
-SSD, virus, blue screen na troubleshooting.<br><br>
-
-Niambie computer yako ina tatizo gani.
-`;
-
-}
-
-
-/* PRINTER */
-
-if(
-q.includes("printer") ||
-q.includes("print")
-){
-
-return `
-<b>🖨️ Printer Troubleshooting</b><br><br>
-
-Kama printer haiprinti:<br><br>
-
-1️⃣ Angalia power.<br>
-2️⃣ Angalia USB/network connection.<br>
-3️⃣ Hakikisha printer ipo Online.<br>
-4️⃣ Check print queue.<br>
-5️⃣ Hakikisha driver sahihi imewekwa.<br>
-6️⃣ Angalia paper na ink/toner.<br><br>
-
-Niambie <b>brand na model ya printer</b>
-mfano HP, Canon, Epson au Brother,
-ili nikuelekeze vizuri zaidi.
-`;
-
-}
-
-
-/* NETWORK */
-
-if(
-q.includes("network") ||
-q.includes("lan") ||
-q.includes("rj45") ||
-q.includes("cat6") ||
-q.includes("cable") ||
-q.includes("waya")
-){
-
-return `
-<b>🌐 Network & Cabling</b><br><br>
-
-Naweza kukusaidia kuhusu:<br><br>
-
-🔌 Cat5e / Cat6 / Cat6A<br>
-🔌 RJ45 termination<br>
-🔌 Patch Panel<br>
-🔌 Switches<br>
-🔌 Routers<br>
-🔌 IP Address<br>
-🔌 VLAN<br>
-🔌 Network troubleshooting<br><br>
-
-Kama una tatizo la network,
-niambie vifaa ulivyonavyo na tatizo linalotokea.
-`;
-
-}
-
-
-/* SERVER */
-
-if(
-q.includes("server") ||
-q.includes("database") ||
-q.includes("nas")
-){
-
-return `
-<b>🖥️ Server & Storage</b><br><br>
-
-Naweza kukusaidia kuhusu server setup,
-file sharing, backup, NAS, network storage,
-user permissions na basic server troubleshooting.<br><br>
-
-Niambie unatumia server gani
-na unataka ifanye kazi gani.
-`;
-
-}
-
-
-/* SECURITY */
-
-if(
-q.includes("security") ||
-q.includes("password") ||
-q.includes("hack") ||
-q.includes("virus")
-){
-
-return `
-<b>🔐 IT Security</b><br><br>
-
-Kwa usalama wa mfumo:<br><br>
-
-• Tumia passwords strong.<br>
-• Washa MFA/2FA inapowezekana.<br>
-• Update Windows na software.<br>
-• Usifungue links/files zisizoaminika.<br>
-• Tumia backup.<br>
-• Linda router na Wi-Fi kwa password salama.<br><br>
-
-Kama una security problem,
-nieleze tatizo bila kutuma password zako.
-`;
-
-}
-
-
-/* DEFAULT */
-
-return `
-<b>🤖 IT Solution AI</b><br><br>
-
-Nimepokea swali lako:<br>
-<i>"${question}"</i><br><br>
-
-Naweza kukusaidia zaidi kwenye:<br><br>
-
-💻 Computer & Laptop<br>
-🖨️ Printer<br>
-📹 CCTV<br>
-🌐 Networking<br>
-📶 Wi-Fi<br>
-🔌 Cabling<br>
-🖥️ Servers<br>
-🔐 IT Security<br>
-⚙️ IT Troubleshooting<br><br>
-
-<strong>Jaribu kuuliza swali lenye maelezo zaidi.</strong><br><br>
-
-Mfano:<br>
-"Router yangu inawaka lakini internet haipo."
-`;
-
-}
+const AI_WORKER_URL =
+"https://itsolution-ai.mohdmussaomar72.workers.dev/";
 
 
 /* ========================================= */
-/* SEND AI MESSAGE */
+/* SEND MESSAGE TO CLOUDFLARE */
 /* ========================================= */
 
-function sendAIMessage(){
+async function sendAIMessage(){
 
 const input =
 document.getElementById("aiInput");
@@ -2495,10 +1855,17 @@ document.getElementById("aiInput");
 const messages =
 document.getElementById("aiMessages");
 
+const button =
+document.getElementById("aiSendButton");
+
 const question =
 input.value.trim();
 
-if(question==="") return;
+if(!question){
+
+return;
+
+}
 
 
 /* USER MESSAGE */
@@ -2506,10 +1873,10 @@ if(question==="") return;
 const userMessage =
 document.createElement("div");
 
-userMessage.className=
+userMessage.className =
 "ai-message user";
 
-userMessage.textContent=
+userMessage.textContent =
 question;
 
 messages.appendChild(
@@ -2518,8 +1885,15 @@ userMessage
 
 input.value="";
 
-messages.scrollTop=
+messages.scrollTop =
 messages.scrollHeight;
+
+
+/* DISABLE BUTTON */
+
+button.disabled=true;
+
+button.style.opacity=".6";
 
 
 /* THINKING */
@@ -2527,51 +1901,163 @@ messages.scrollHeight;
 const loading =
 document.createElement("div");
 
-loading.className=
+loading.className =
 "ai-message bot";
 
-loading.id=
-"aiLoading";
-
-loading.innerHTML=
-"🤔 Nafikiria...";
+loading.innerHTML =
+"🤔 <b>ITsolution AI inafikiria...</b>";
 
 messages.appendChild(
 loading
 );
 
-messages.scrollTop=
+messages.scrollTop =
 messages.scrollHeight;
 
 
-/* RESPONSE */
+try{
 
-setTimeout(function(){
+/* SEND TO CLOUDFLARE WORKER */
+
+const response =
+await fetch(
+AI_WORKER_URL,
+{
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+prompt:question
+})
+
+}
+);
+
+
+/* HTTP ERROR */
+
+if(!response.ok){
+
+throw new Error(
+"HTTP "+response.status
+);
+
+}
+
+
+/* GET JSON */
+
+const data =
+await response.json();
+
 
 loading.remove();
+
+
+/* GET AI ANSWER */
+
+let aiText =
+data.response ||
+data.result ||
+data.text ||
+data.message;
+
+
+/* IF WORKER RETURNS OBJECT */
+
+if(
+typeof aiText === "object"
+){
+
+aiText =
+JSON.stringify(aiText);
+
+}
+
+
+if(!aiText){
+
+aiText =
+"Samahani, sijapata jibu kutoka kwa AI kwa sasa.";
+
+}
+
+
+/* AI MESSAGE */
 
 const answer =
 document.createElement("div");
 
-answer.className=
+answer.className =
 "ai-message bot";
 
-answer.innerHTML=
-getAIResponse(question);
+/*
+  Tunatumia textContent badala ya innerHTML
+  ili majibu ya AI yasiingize HTML hatari.
+*/
+
+answer.textContent =
+aiText;
+
 
 messages.appendChild(
 answer
 );
 
-messages.scrollTop=
+messages.scrollTop =
 messages.scrollHeight;
 
-},800);
+
+}catch(error){
+
+console.error(
+"ITsolution AI Error:",
+error
+);
+
+loading.remove();
+
+
+const errorMessage =
+document.createElement("div");
+
+errorMessage.className =
+"ai-message bot";
+
+errorMessage.innerHTML = `
+❌ <b>Samahani.</b><br><br>
+
+ITsolution AI haijaweza kuwasiliana
+na server kwa sasa.<br><br>
+
+<strong>Jaribu tena baada ya muda.</strong>
+`;
+
+messages.appendChild(
+errorMessage
+);
+
+messages.scrollTop =
+messages.scrollHeight;
 
 }
 
 
+/* ENABLE BUTTON */
+
+button.disabled=false;
+
+button.style.opacity="1";
+
+}
+
+
+/* ========================================= */
 /* ENTER KEY */
+/* ========================================= */
 
 document.getElementById(
 "aiInput"
@@ -2581,20 +2067,25 @@ function(event){
 
 if(event.key==="Enter"){
 
+event.preventDefault();
+
 sendAIMessage();
 
 }
 
-});
+}
+);
 
 
 /* ========================================= */
-/* START WITH AI OPEN */
+/* OPEN AI AUTOMATICALLY */
 /* ========================================= */
 
 window.addEventListener(
 "DOMContentLoaded",
 function(){
+
+setTimeout(function(){
 
 document.getElementById(
 "aiAssistant"
@@ -2604,10 +2095,12 @@ document.getElementById(
 "aiOpen"
 ).style.display="none";
 
-}
-);
+},500);
+
+});
 
 </script>
 
 </body>
 </html>
+```

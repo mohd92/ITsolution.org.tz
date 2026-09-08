@@ -2076,49 +2076,480 @@ sendAIMessage();
 }
 );
 
+```html
+<!-- ========================================= -->
+<!-- ITsolution AI ASSISTANT -->
+<!-- ========================================= -->
 
-/* ========================================= */
-/* OPEN AI AUTOMATICALLY */
-/* ========================================= */
+<div class="ai-assistant" id="aiAssistant">
 
-window.addEventListener(
-"DOMContentLoaded",
-function(){
+  <div class="ai-header">
 
-setTimeout(function(){
-
-document.getElementById(
-"aiAssistant"
-).style.display="flex";
-
-document.getElementById(
-"aiOpen"
-).style.display="none";
-
-},500);
-
-});
-<!-- KITUFE NA DIRISHA LA AI -->
-<div class="ai-open-btn" onclick="toggleAIChat()">🤖</div>
-
-<div class="ai-chat-card" id="aiChatCard">
-  <div class="ai-card-header">
-    <h3>🤖 ITsolution AI</h3>
-    <button class="ai-close-btn" onclick="toggleAIChat()">✕</button>
-  </div>
-  
-  <div class="ai-card-body" id="aiMessages">
-    <div class="ai-message bot">
-      Habari! Mambo vipi? Mimi ni <b>ITsolution AI</b>. Niko hapa kukusaidia kwa maswali yoyote!
+    <div class="ai-icon">
+      🤖
     </div>
+
+    <div>
+      <h3>ITsolution AI</h3>
+      <span>● Online</span>
+    </div>
+
+    <button
+      class="ai-close"
+      id="aiClose"
+      type="button"
+      aria-label="Funga AI">
+      ×
+    </button>
+
   </div>
 
-  <div class="ai-card-footer">
-    <input type="text" id="aiInput" placeholder="Andika ujumbe wako hapa..." onkeypress="handleKeyPress(event)">
-    <button id="aiSendButton" onclick="sendAIMessage()">Tuma</button>
+  <div class="ai-messages" id="aiMessages">
+
+    <div class="ai-message bot">
+
+      <b>Habari! 👋</b>
+
+      <br><br>
+
+      Mimi ni <b>ITsolution AI Assistant</b>.
+
+      <br><br>
+
+      Naweza kukusaidia kuhusu:
+
+      <br><br>
+
+      💻 Computer<br>
+      🖨️ Printer<br>
+      📹 CCTV<br>
+      🌐 Networking<br>
+      📶 Wi-Fi<br>
+      🔌 Network Cabling<br>
+      🔐 Security<br>
+      🖥️ Servers<br>
+      📱 Technology
+
+      <br><br>
+
+      <strong>Mfano:</strong><br>
+
+      "CCTV yangu haionyeshi picha, nifanye nini?"
+
+    </div>
+
   </div>
+
+  <div class="ai-input-area">
+
+    <input
+      type="text"
+      id="aiInput"
+      placeholder="Uliza kuhusu teknolojia..."
+      autocomplete="off">
+
+    <button
+      id="aiSendButton"
+      type="button">
+      ➤
+    </button>
+
+  </div>
+
 </div>
+
+
+<!-- AI OPEN BUTTON -->
+
+<button
+  class="ai-open"
+  id="aiOpen"
+  type="button"
+  title="Fungua ITsolution AI"
+  aria-label="Fungua ITsolution AI">
+
+  🤖
+
+</button>
+
+
+<script>
+
+/* ========================================= */
+/* CLOUDFLARE AI WORKER */
+/* ========================================= */
+
+const AI_WORKER_URL =
+"https://itsolution-ai.mohdmussaomar72.workers.dev/";
+
+
+/* ========================================= */
+/* ELEMENTS */
+/* ========================================= */
+
+const aiAssistant =
+document.getElementById("aiAssistant");
+
+const aiOpen =
+document.getElementById("aiOpen");
+
+const aiClose =
+document.getElementById("aiClose");
+
+const aiInput =
+document.getElementById("aiInput");
+
+const aiSendButton =
+document.getElementById("aiSendButton");
+
+const aiMessages =
+document.getElementById("aiMessages");
+
+
+/* ========================================= */
+/* OPEN AI */
+/* ========================================= */
+
+function openAI(){
+
+  aiAssistant.style.display = "flex";
+
+  aiOpen.style.display = "none";
+
+  setTimeout(function(){
+
+    aiInput.focus();
+
+  },100);
+
+}
+
+
+/* ========================================= */
+/* CLOSE AI */
+/* ========================================= */
+
+function closeAI(){
+
+  aiAssistant.style.display = "none";
+
+  aiOpen.style.display = "flex";
+
+}
+
+
+/* ========================================= */
+/* BUTTON EVENTS */
+/* ========================================= */
+
+aiOpen.addEventListener(
+  "click",
+  openAI
+);
+
+aiClose.addEventListener(
+  "click",
+  closeAI
+);
+
+
+/* ========================================= */
+/* SEND MESSAGE */
+/* ========================================= */
+
+async function sendAIMessage(){
+
+  const question =
+  aiInput.value.trim();
+
+  if(!question){
+
+    return;
+
+  }
+
+
+  /* USER MESSAGE */
+
+  const userMessage =
+  document.createElement("div");
+
+  userMessage.className =
+  "ai-message user";
+
+  userMessage.textContent =
+  question;
+
+  aiMessages.appendChild(
+  userMessage
+  );
+
+
+  /* CLEAR INPUT */
+
+  aiInput.value = "";
+
+
+  /* SCROLL */
+
+  aiMessages.scrollTop =
+  aiMessages.scrollHeight;
+
+
+  /* DISABLE BUTTON */
+
+  aiSendButton.disabled = true;
+
+  aiSendButton.style.opacity = "0.6";
+
+
+  /* THINKING MESSAGE */
+
+  const loading =
+  document.createElement("div");
+
+  loading.className =
+  "ai-message bot";
+
+  loading.innerHTML =
+  "🤔 <b>ITsolution AI inafikiria...</b>";
+
+  aiMessages.appendChild(
+  loading
+  );
+
+
+  aiMessages.scrollTop =
+  aiMessages.scrollHeight;
+
+
+  try{
+
+    /* ===================================== */
+    /* SEND REQUEST TO CLOUDFLARE WORKER */
+    /* ===================================== */
+
+    const response =
+    await fetch(
+      AI_WORKER_URL,
+      {
+        method:"POST",
+
+        headers:{
+          "Content-Type":"application/json"
+        },
+
+        body:JSON.stringify({
+          prompt:question
+        })
+      }
+    );
+
+
+    /* ===================================== */
+    /* CHECK HTTP RESPONSE */
+    /* ===================================== */
+
+    if(!response.ok){
+
+      throw new Error(
+        "HTTP Error: " +
+        response.status
+      );
+
+    }
+
+
+    /* ===================================== */
+    /* READ JSON */
+    /* ===================================== */
+
+    const data =
+    await response.json();
+
+
+    console.log(
+      "ITsolution AI response:",
+      data
+    );
+
+
+    /* REMOVE THINKING */
+
+    loading.remove();
+
+
+    /* ===================================== */
+    /* GET AI RESPONSE */
+    /* ===================================== */
+
+    let aiText =
+      data.response ||
+      data.result ||
+      data.text ||
+      data.message;
+
+
+    /* OBJECT RESPONSE */
+
+    if(
+      typeof aiText === "object" &&
+      aiText !== null
+    ){
+
+      aiText =
+      JSON.stringify(
+        aiText,
+        null,
+        2
+      );
+
+    }
+
+
+    /* NO RESPONSE */
+
+    if(!aiText){
+
+      aiText =
+      "Samahani, AI haikurudisha jibu kwa sasa. Tafadhali jaribu tena.";
+
+    }
+
+
+    /* ===================================== */
+    /* CREATE AI MESSAGE */
+    /* ===================================== */
+
+    const answer =
+    document.createElement("div");
+
+    answer.className =
+    "ai-message bot";
+
+    answer.textContent =
+    aiText;
+
+
+    aiMessages.appendChild(
+    answer
+    );
+
+
+    /* SCROLL */
+
+    aiMessages.scrollTop =
+    aiMessages.scrollHeight;
+
+
+  }catch(error){
+
+    console.error(
+      "ITsolution AI Error:",
+      error
+    );
+
+
+    /* REMOVE THINKING */
+
+    loading.remove();
+
+
+    /* ERROR MESSAGE */
+
+    const errorMessage =
+    document.createElement("div");
+
+    errorMessage.className =
+    "ai-message bot";
+
+    errorMessage.innerHTML = `
+      ❌ <b>Samahani.</b>
+
+      <br><br>
+
+      ITsolution AI haijaweza
+      kuwasiliana na server kwa sasa.
+
+      <br><br>
+
+      Tafadhali hakikisha Cloudflare
+      Worker yako iko online kisha
+      ujaribu tena.
+    `;
+
+
+    aiMessages.appendChild(
+    errorMessage
+    );
+
+
+    aiMessages.scrollTop =
+    aiMessages.scrollHeight;
+
+  }
+
+
+  /* ===================================== */
+  /* ENABLE BUTTON */
+  /* ===================================== */
+
+  aiSendButton.disabled = false;
+
+  aiSendButton.style.opacity = "1";
+
+}
+
+
+/* ========================================= */
+/* SEND BUTTON */
+/* ========================================= */
+
+aiSendButton.addEventListener(
+  "click",
+  sendAIMessage
+);
+
+
+/* ========================================= */
+/* ENTER KEY */
+/* ========================================= */
+
+aiInput.addEventListener(
+  "keydown",
+  function(event){
+
+    if(event.key === "Enter"){
+
+      event.preventDefault();
+
+      sendAIMessage();
+
+    }
+
+  }
+);
+
+
+/* ========================================= */
+/* IMPORTANT */
+/* ========================================= */
+
+/*
+   Chatbot haitafunguka yenyewe.
+   User atabonyeza 🤖 kuifungua.
+*/
+
+aiAssistant.style.display = "none";
+
+aiOpen.style.display = "flex";
+
 </script>
+
+</body>
+</html>
+```
+
 
 </body>
 </html>
